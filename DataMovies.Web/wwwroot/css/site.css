@@ -544,7 +544,7 @@ form.navbar-series button:hover {
     border-radius: 3px;
     width: 186px;
     height: 18px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:yekan;
     font-size: xx-small;
 
 }
@@ -555,13 +555,24 @@ form.navbar-series button:hover {
     line-height:unset;
 
 }
+
 .smart-search-tab .smart-search-request .select-up .select-name
 {
     font-family:yekan;
     font-size:11px;
     font-weight:bold;
     color:#383838;
-    margin-left:2px
+    margin-left:2px;
+ 
+}
+.smart-search-tab .smart-search-request .select-up .select-name-best
+{
+    font-family:yekan;
+    font-size:11px;
+    font-weight:bold;
+    color:#383838;
+    margin-left:2px;
+    margin-right:19px
  
 }
 .smart-search-tab .smart-search-request .select-up .select-name2
@@ -574,7 +585,7 @@ form.navbar-series button:hover {
 }
 .smart-search-tab .smart-search-request .select-up .select-name3
 {
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:yekan;
     font-weight:bold;
     font-size:11px;
     color:#383838;
@@ -590,12 +601,14 @@ form.navbar-series button:hover {
     border-radius:4px;
     width:70px;
     height:20px;
-    background-color:#FFF;
+    background-color:#fae4b6;
     transition:all 400ms ease
 }
 .smart-search-tab .smart-search-request .select-up .btnsrc:hover
 {
-background-color:rgba(255, 203, 0, 0.20)
+
+    background-color:rgba(252, 170, 55, 0.51)
+
 }
 
 /*End Top smart bar section*/
@@ -659,12 +672,13 @@ background-color:rgba(255, 203, 0, 0.20)
     border:1px solid rgba(0, 0, 0, 0.17);
     border-radius:4px;
     width:70px;
-    background-color:#FFF;
+    background-color:#fae4b6;
     transition:all 400ms ease
 }
 .smart-search-tab .smart-search-request .select-up .btn-src:hover
 {
-background-color:rgba(255, 203, 0, 0.20)
+    background-color:rgba(252, 170, 55, 0.51)
+
 }
 .smart-search-tab .smart-search-request .select-up .selector {
     border: 1px solid rgba(0, 0, 0, 0.30);

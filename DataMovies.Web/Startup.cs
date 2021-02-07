@@ -50,7 +50,7 @@ namespace DataMovies.Web
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Films}/{action=Index}/{id?}");
+                    pattern: "{controller=topimdb}/{action=Index}/{id?}");
             });
         }
     }
