@@ -39,7 +39,9 @@
 html,body{
   
 
-    background-color:#c7c7c7
+    
+    
+    
 }
 .container {
     width: 980px;
@@ -240,26 +242,23 @@ form.navbar span {
     font-family: yekan;
     font-size: small;
     font-weight: 400;
-    margin-top: 5px
+    margin-top: 10px
 }
- .social-tab div
+
+ .social-tab img
  {
-     margin-right:20px;
-    margin-top:3px;
-    font-size:large;
-     
+     width:8%;
+     margin-right:15px;
+     cursor:pointer;
+     transform:scale(1);
+     transition:all 300ms ease ;
+ }
+ .social-tab img:hover
+ {
+     transform:scale(1.2);
+    
 
  }
-.social-tab span
-{
-    font-size:larger;
-    margin:0px 3px;
-    cursor:pointer;
-}
-.social-tab .email
-{
-    color:#337cac
-}
 
 /*End Social Tab Section*/
 /*Next Address Section*/
@@ -300,11 +299,9 @@ form.navbar span {
     margin:0px
    
 }
-.card {
+.card-movie {
     background-color: #15120c;
-    margin-top:5px;
-
- 
+    margin-top: 5px;
 }
 .movie-container {
     height: 153px !important;
@@ -470,7 +467,7 @@ form.navbar-series button:hover {
     margin: 5px 0px;
     border-radius: 5px;
     background-color: rgba(0, 0, 0, 0.10);
-    height: 465px;
+    height: 490px;
 }
 .popular-movies-tab label
 {
@@ -500,18 +497,18 @@ form.navbar-series button:hover {
 
 .popular-movies-tab ul li.popsleft
 {
-    width:51px;
+    width:53px;
     margin:3px 2px
 
 }
 .popsleft img {
 
-    width:45px;
-    height: 67px;
+    width:47px;
+    height: 74px;
  
 }
 .popular-movies-tab ul li:hover {
-    border: 1px solid black
+    border: 1px solid #ff0000
 }
 /*End popular movies*/
 /*smart search section*/
@@ -595,7 +592,7 @@ form.navbar-series button:hover {
 .smart-search-tab .smart-search-request .select-up .btnsrc
 {
     
-    margin:10px 75px 0px 0px!important;
+    margin:10px 85px 0px 0px!important;
     padding:1px 1px;
     border:1px solid rgba(0, 0, 0, 0.17);
     border-radius:4px;
@@ -645,8 +642,7 @@ form.navbar-series button:hover {
     font-family:yekan;
     font-size:11px;
     font-weight:bold;
-        color:#383838;
-
+    color:#383838;
     margin-right:24px
 }
 .smart-search-tab .smart-search-request .select-up .select-name7
@@ -663,9 +659,17 @@ form.navbar-series button:hover {
     font-size:11px;
     font-weight:bold;
     color:#383838;
-    margin-right:14px
+    margin-right:27px
 }
-.smart-search-tab .smart-search-request .select-up .btn-src
+.smart-search-tab .smart-search-request .select-up .select-name9
+{
+    font-family:yekan;
+    font-size:11px;
+    font-weight:bold;
+    color:#383838;
+    margin-right:20px
+}
+/*.smart-search-tab .smart-search-request .select-up .btn-src
 {
     margin-right:75px;
     padding:1px 1px;
@@ -679,7 +683,7 @@ form.navbar-series button:hover {
 {
     background-color:rgba(252, 170, 55, 0.51)
 
-}
+}*/
 .smart-search-tab .smart-search-request .select-up .selector {
     border: 1px solid rgba(0, 0, 0, 0.30);
     background: rgba(255, 255, 255, 0.30);
@@ -746,8 +750,8 @@ form.navbar-series button:hover {
     text-transform: uppercase;
     font-size: 32px;
     font-style: normal;
-    margin-top: 5px;
-    margin-left:14px;
+    margin-top: 10px;
+    margin-left:12px;
     font-weight: normal;
     line-height:40px;
     color:#333
@@ -757,8 +761,6 @@ form.navbar-series button:hover {
     border-radius: 5px;
     padding: 10px !important;
     margin-top:5px;
-   
-
 }
 .blog-list-tab .title-movie
 {
@@ -778,7 +780,8 @@ form.navbar-series button:hover {
 .blog-list-tab .size-ticket
 {
     font-size:x-small;
-    color: #5300a5;
+    color:#b53200;
+
 }
 .blog-list-tab .size-lbl
 {
@@ -858,7 +861,7 @@ form.navbar-series button:hover {
     width: 188px;
     height: 280px;
     padding: 8px;
-    background: #fae4b6;
+    background-color: antiquewhite;
     border: 1px solid rgba(0, 0, 0, 0.10)
 }
 /*description blog list section*/
@@ -868,7 +871,7 @@ form.navbar-series button:hover {
     border: 1px solid rgba(0, 0, 0, 0.05);
     margin: 8px 0px;
     display: block;
-    width: 368px;
+    width: 390px;
     height: 280px;
 }
 .description .desc-title
@@ -882,18 +885,55 @@ form.navbar-series button:hover {
     color:#333;
 
 }
-.description .desc-items
+.description .desc-title span
 {
+    margin-left:auto;
+    margin-right:10px;
+    margin-top:2px;
+    color:#333;
+    transition:all 300ms ease
+
+}
+.description .desc-title span:hover
+{
+    color:#2f2ec8
+}
+
+.description .desc-items {
     margin-right: 15px;
     margin-left: 15px;
-    margin-top:15px;
-    margin-bottom:5px;
-    padding:5px 10px;
-    border-radius:3px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    padding: 5px 10px;
+    border-radius: 3px;
     border: 1px solid rgba(0, 0, 0, 0.08);
     background-color: rgba(255, 255, 255, 0.23);
+    position:relative
+}
+.description .desc-items .imdb-rating-top
+{
+  
+    position:absolute
+}
+.description .desc-items .imdb-rating-top .rating-pic
+{
+    width:24px;
+    margin-left:10px
+    
+}
+.description .desc-items .imdb-rating-top .imdb-under-rat
+{
+    font-size:9px;
+    margin-top:2px;
+    font-weight:bold
+    
 
-
+}
+.description .desc-items span {
+    color: #2e2e2e;
+    font-size: 10px;
+    font-family: yekan;
+    font-weight: bold
 }
 
 .description .desc-info i {
@@ -904,7 +944,7 @@ form.navbar-series button:hover {
 .description .desc-info span
 {
     color:#2e2e2e;
-    font-size:9px;
+    font-size:10px;
     font-family:yekan;
     font-weight:bold
 
@@ -914,9 +954,26 @@ form.navbar-series button:hover {
     font-size:10px;
     font-weight:bold;
     text-decoration:underline;
-    color:#c47e00;
+    color:#b53200;
 
 }
+.description .desc-info .button-dl
+{
+    text-decoration:none;
+    background-color:#c80000;
+    color:#fff;
+    padding:1px 4px;
+    border-radius:4px;
+    margin-right:50px;
+    transition: all 200ms ease
+
+}
+.description .desc-info .button-dl:hover
+{
+    background-color:#f35252;
+
+}
+
 .description .desc-info .rating-imdb
 {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -929,17 +986,18 @@ form.navbar-series button:hover {
 color:black;
 font-family:'League Gothic';
 font-size:15px;
-font-weight:300;
+font-weight:500;
 background-color:#cf9e00;
 padding:0px 3px;
 border-radius:2px;
-text-shadow: 0 1px 1px #e0ded7;
+/*text-shadow: 0 1px 1px #e0ded7;*/
 text-decoration:none;
 margin:0px 3px
 }
 .description .desc-info .vots-txt
 {
-    font-size:8px;
+    font-size:9px;
+    margin-right:10px
 
 }
 .description .desc-info .rating-imdb .often
@@ -973,7 +1031,7 @@ margin:0px 3px
 .description .desc-story .story-movie-txt
 {
     font-family:yekan;
-    font-size:9px;
+    font-size:10px;
     line-height:15px !important;
 
  

@@ -73,27 +73,25 @@
     position:relative;
     cursor:pointer
 }
-.cover-movie-list__movie .cover-movie .black-over
-{
-    position:absolute;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    opacity:0.3;
+.cover-movie-list__movie .cover-movie .black-over {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.3;
     background: rgb(1,0,14);
-    background: linear-gradient(180deg, rgba(1,0,14,0) 0%, rgba(0,0,0,0.37298669467787116) 27%, rgba(0,0,8,0.6138830532212884) 59%, rgba(0,0,0,0.8379726890756303) 100%, rgba(10,0,89,1) 100%, rgba(11,0,94,1) 100%);
-   animation-duration:0.3s;
-   animation-timing-function:ease
+    background: linear-gradient(180deg, rgba(1,0,14,0) 0%, rgba(0,0,0,0.6222864145658263) 47%, rgba(0,0,8,0.76234243697479) 69%, rgba(0,0,0,0.8379726890756303) 100%, rgba(10,0,89,1) 100%, rgba(11,0,94,1) 100%);
+    animation-duration: 0.3s;
+    animation-timing-function: ease
 }
-.cover-movie-list__movie .cover-movie:hover .black-over
-{   background: rgb(1,0,14);
-    background: linear-gradient(180deg, rgba(1,0,14,0) 0%, rgba(0,0,0,0.37298669467787116) 27%, rgba(0,0,8,0.6138830532212884) 59%, rgba(0,0,0,0.8379726890756303) 100%, rgba(10,0,89,1) 100%, rgba(11,0,94,1) 100%);
-   animation-name:tooverblackanime;
-   animation-fill-mode:both;
-   animation-duration:0.3s;
-   animation-timing-function:ease
-
+.cover-movie-list__movie .cover-movie:hover .black-over {
+    background: rgb(1,0,14);
+    background: linear-gradient(180deg, rgba(1,0,14,0) 0%, rgba(0,0,0,0.6222864145658263) 47%, rgba(0,0,8,0.76234243697479) 69%, rgba(0,0,0,0.8379726890756303) 100%, rgba(10,0,89,1) 100%, rgba(11,0,94,1) 100%);
+    animation-name: tooverblackanime;
+    animation-fill-mode: both;
+    animation-duration: 0.3s;
+    animation-timing-function: ease
 }
 .cover-movie-list__movie .cover-movie .black-over:default
 {

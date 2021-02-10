@@ -1,0 +1,150 @@
+﻿@font-face {
+    font-family: 'Font Awesome 5 Free';
+    font-style: normal;
+    font-weight: 900;
+    font-display: block;
+    src: url("../../font/Fontawesome/webfonts/fa-solid-900.eot");
+    src: url("../../font/Fontawesome/webfonts/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("../../font/Fontawesome/webfonts/fa-solid-900.woff2") format("woff2"), url("../../font/Fontawesome/webfonts/fa-solid-900.woff") format("woff"), url("../../font/Fontawesome/webfonts/fa-solid-900.ttf") format("truetype"), url("../../font/Fontawesome/webfonts/fa-solid-900.svg#fontawesome") format("svg");
+}
+
+@font-face {
+    font-family: 'Font Awesome 5 Brands';
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url("../../font/Fontawesome/webfonts/fa-brands-400.eot");
+    src: url("../../font/Fontawesome/webfonts/fa-brands-400.eot?#iefix") format("embedded-opentype"), url("../../font/Fontawesome/webfonts/fa-brands-400.woff2") format("woff2"), url("../../font/Fontawesome/webfonts/fa-brands-400.woff") format("woff"), url("../../font/Fontawesome/webfonts/fa-brands-400.ttf") format("truetype"), url("../../font/Fontawesome/webfonts/fa-brands-400.svg#fontawesome") format("svg");
+}
+
+@font-face {
+    font-family: "yekan";
+    src: url(../font/Yekan/Yekan.eot);
+    src: url(../font/Yekan/Yekan.eot?#iefix) format("embedded-opentype"), url(../font/Yekan/Yekan.woff) format("woff"), url(../font/Yekan/Yekan.ttf) format("truetype"), url(../font/Yekan/Yekan.svg#BYekan) format("svg");
+    font-weight: normal;
+    font-style: normal
+}
+.direct-tab
+{
+    background-color: rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    padding: 10px !important;
+    margin-top: 5px;
+    height:800px;
+    position:relative
+}
+.direct-tab .direct-cheir img
+{
+    margin-left:15px;
+    position:absolute;
+    width:6%
+
+}
+.direct-tab .direct-item-card img {
+    width: 230px;
+    height: 310px;
+    border-radius: 2px;
+}
+.direct-tab .direct-item-card
+{
+    
+    box-shadow:0 5px 10px 0 rgba(0,0,0,0.5) !important;
+    position:relative
+    
+}
+.direct-tab .mirror-over {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgb(255,255,255);
+    background: linear-gradient(200deg, rgba(255,255,255,0) 65%, rgba(3,3,3,0.12368697478991597) 66%, rgba(255,255,255,0) 100%);
+}
+
+.direct-name h5 {
+     display:flex;
+     align-items:center;
+     justify-content:center;
+    font-family: 'League Gothic';
+    font-size: 27px;
+    padding: 0px;
+    color: #272727; 
+    border-radius:2px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    width: 230px;
+    background-color: rgba(255, 255, 255, 0.30);
+    margin-bottom: 5px;
+   
+}
+.director-information span
+{
+    font-family:yekan;
+    font-size:11px;
+}
+.director-information .information-tab {
+    background-color: rgba(255, 255, 255, 0.30);
+    border-radius: 2px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    padding: 10px;
+    margin-right: 5px;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.5) !important;
+    height:220px;
+    width:380px
+}
+.director-information .awards-info
+{
+    background-color: rgba(234, 151, 0, 0.20);
+    border-radius: 2px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    padding: 10px;
+    margin-right: 5px;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.5) !important;
+    height:89px;
+    width:380px
+}
+.director-information .awards-info .border-box-director
+{
+    margin-top:14px;
+    padding:3px 3px;
+    border:3px solid rgba(219, 147, 0, 0.50);
+    
+}
+
+.director-information .awards-info .awards-director
+{
+    background-color:rgba(219, 147, 0, 0.50);
+    padding:5px 5px;
+    
+}
+.director-information .awards-info .awards-director .oscar-win-txt
+{
+    font-family:yekan;
+    font-size:13px;
+    color:#333
+}
+.director-information .awards-info .awards-director .oscar-win-count
+{
+    font-size:13px;
+    color:#333;
+    padding:0px 4px;
+    background-color:rgba(255, 255, 255, 0.25)
+
+
+}
+.director-information .awards-info .awards-director .other-win-txt {
+    font-family: yekan;
+    font-size: 11px;
+    color: #333
+}
+.director-information .awards-info .awards-director .other-win-count
+{
+    font-size:12px;
+    color:#333;
+    padding:0px 2px;
+    background-color:rgba(255, 255, 255, 0.25)
+
+
+
+
+
+}
