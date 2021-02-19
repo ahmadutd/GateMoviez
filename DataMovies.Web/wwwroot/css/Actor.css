@@ -25,7 +25,7 @@
 }
 .direct-tab
 {
-    background-color: rgba(0, 0, 0, 0.15);
+    background-color:rgba(0, 0, 0, 0.81);
     border-radius: 5px;
     padding: 10px !important;
     margin-top: 5px;
@@ -62,19 +62,18 @@
 }
 
 .direct-name h5 {
-     display:flex;
-     align-items:center;
-     justify-content:center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-family: 'League Gothic';
     font-size: 27px;
     padding: 0px;
-    color: #272727; 
-    border-radius:2px;
+    color: #272727;
+    border-radius: 2px;
     border: 1px solid rgba(0, 0, 0, 0.15);
     width: 230px;
-    background-color: rgba(255, 255, 255, 0.30);
+    background-color: rgba(255, 255, 255, 0.84);
     margin-bottom: 5px;
-   
 }
 .director-information span
 {
@@ -82,7 +81,7 @@
     font-size:11px;
 }
 .director-information .information-tab {
-    background-color: rgba(255, 255, 255, 0.30);
+    background-color: rgba(255, 255, 255, 0.84);
     border-radius: 2px;
     border: 1px solid rgba(0, 0, 0, 0.15);
     padding: 10px;
@@ -92,7 +91,7 @@
     width:380px
 }
 .director-information .awards-info {
-    background-color: rgba(255, 255, 255, 0.30);
+    background-color: rgba(255, 255, 255, 0.84);
     border-radius: 2px;
     border: 1px solid rgba(0, 0, 0, 0.15);
     padding: 10px;

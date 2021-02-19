@@ -2,9 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using GateMoviez.Data;
+using GateMoviez.Domain;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -24,6 +27,21 @@ namespace DataMovies.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+
+            services.AddIdentity<AppUser, AppRole>(Options =>
+            {
+                Options.User.RequireUniqueEmail = true;
+                Options.Password.RequireNonAlphanumeric = false;
+                Options.Password.RequiredLength = 4;
+                Options.Password.RequiredUniqueChars = 0;
+                Options.Password.RequireUppercase = false;
+
+            }
+            ).AddEntityFrameworkStores<GateMoviezDbContext>();
+            services.AddDbContext<GateMoviezDbContext>(
+                options => options.UseSqlServer(this.Configuration.GetConnectionString("DefaultConnection"))
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,7 +68,7 @@ namespace DataMovies.Web
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Director}/{action=Index}/{id?}");
+                    pattern: "{controller=site}/{action=Index}/{id?}");
             });
         }
     }

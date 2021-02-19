@@ -1,0 +1,128 @@
+﻿@using Microsoft.AspNetCore.Identity;
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/fontawesome/all.css" />
+    <link rel="stylesheet" href="~/css/fontawesome/solid.css" />
+    <link rel="stylesheet" href="~/css/fontawesome/regular.css" />
+    <link rel="stylesheet" href="~/css/admin-site.css" />
+</head>
+<body>
+    <div class="header">
+        <div class="toggle-sidebar">
+            <button id="jstoggle-sidebar-btn" class="toggle-sidebar-btn">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        <div class="mr-auto">
+            @if (User.Identity.IsAuthenticated)
+            {
+                @User.Identity.Name
+            }
+            else
+            {
+                <span>کاربر میهمان</span>
+            }
+            </div>
+        <div class="ltr">
+            <div class="dropdown">
+                <button class="btn dropdown-toggle d-flex align-items-center" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="admin-avatar mr-3">
+                        <img class="w-100 h-100" src="~/img/admin.jpg" alt="admin-avatar" />
+                    </div>
+                </button>
+                <div class="dropdown-menu texr-right" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">مشاهده پروفایل</a>
+                    <a class="dropdown-item" href="#">ویرایش پروفایل</a>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <a class="dropdown-item" href="#">خروج از سایت</a>
+                    }
+                    else
+                    {
+                        <a class="dropdown-item" href="#">ورور به سایت</a>
+                    }
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="content-wraper">
+        <div id="jsSidebar" class="sidebar">
+            <ul class="sidebar-nav">
+                <li class="nav-menu-item">
+
+                    <a class="nav-item-link" href="#">
+                        <i class="fas fa-user ml-2"></i>
+                        <span>داشبورد</span>
+                    </a>
+                </li>
+                <li class="nav-menu-item">
+                    <a class="nav-item-link" asp-controller="site" asp-action="index">
+                        <i class="fas fa-globe ml-2"></i>
+                        <span>مشاهده سایت</span>
+                    </a>
+                </li>
+                <li class="nav-menu-item">
+                    <a class="nav-item-link" href="#">
+                        <i class="fas fa-calculator ml-2"></i>
+                        <span>حسابداری</span>
+                    </a>
+                </li>
+                <li class="nav-menu-item">
+                    <a class="nav-item-link" href="#">
+                        <i class="fas fa-users-cog ml-2"></i>
+                        <span>مدیریت اشتراک ها</span>
+                    </a>
+                </li>
+                <li class="nav-menu-item">
+                    <a class="nav-item-link" href="#"><i class="fas fa-comment ml-2"></i><span>نظرات</span></a>
+                </li>
+                <li class="nav-menu-item">
+                    <a class="nav-item-link" href="#"><i class="fas fa-envelope-open-text ml-2"></i><span>مدیریت تیکت</span></a>
+                </li>
+                <li class="nav-menu-item">
+                    <a class="nav-item-link" href="#"><i class="fas fa-percentage ml-2"></i><span>تخفیف</span></a>
+                </li>
+                <li class="nav-menu-item">
+                    <a class="nav-item-link" href="#"><i class="fas fa-user-friends ml-2"></i><span>کاربران</span></a>
+                </li>
+                <li class="nav-menu-item">
+                    <a class="nav-item-link" href="#"><i class="fas fa-power-off ml-2"></i><span>خروج</span></a>
+                </li>
+            </ul>
+        </div>
+        <div id="jsContent" class="content expand">
+            <div class="content-body">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        $('#jstoggle-sidebar-btn').click(function () {
+            $('#jsSidebar').toggleClass('show');
+            $('#jsContent').toggleClass('expand');
+
+        })
+
+    </script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
