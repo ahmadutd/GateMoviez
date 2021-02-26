@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity;
+
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -11,191 +14,205 @@
 
 </head>
 <body>
-    
+
     <div class="container-fluid">
 
-        <div class="container">
+        <div class="container partation-1">
             <div class="register-tab pl-1 pr-1">
                 <div class="top">
                     <span><a href="#" class="fab fa-facebook text-primary"></a></span>
                     <span><a href="#" class="fab fa-google text-danger"></a></span>
-                    <span><a href="#" data-toggle="modal" data-target="#exampleModalCenter1">Sign Up</a></span>
-                    @* modal *@
-                    <div class="modal fade sing-up" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <span class="text-white">Wellcome ! <span class="text-warning">@User.Identity.Name</span> </span>
 
-                                <div class="sinup-tab">
-                                    <button type="button" style="opacity:1" class="close" data-dismiss="modal" aria-label="Close">
-                                        <img aria-hidden="true" src="/img/social singup/close.png" alt="Alternate Text" />
-                                    </button>
-                                    <div class="sing-window">
 
-                                        <h6>ایجاد حساب کاربری</h6>
-                                        <div class="cover-singup">
-                                            <img src="/img/social singup/1.png" alt="Alternate Text" />
-                                        </div>
+                    }
+                    else
+                    {
+                        <span><a href="#" data-toggle="modal" data-target="#exampleModalCenter1">Sign Up</a></span>
 
-                                        <div class="singup-inputs-window rtl d-flex">
-                                            <div class="d-flex flex-column align-items-start">
+                        @* modal *@
+                        <div class="modal fade sing-up" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
 
-                                                <div>
-                                                    <label class="select-name3">نام کاربری :</label>
+                                    <div class="sinup-tab">
+                                        <button type="button" style="opacity:1" class="close" data-dismiss="modal" aria-label="Close">
+                                            <img aria-hidden="true" src="/img/social singup/close.png" alt="Alternate Text" />
+                                        </button>
+                                        <form>
+
+                                            <div class="sing-window">
+                                                <h6>ایجاد حساب کاربری</h6>
+                                                <div class="cover-singup">
+                                                    <img src="/img/social singup/1.png" alt="Alternate Text" />
+                                                </div>
+
+                                                <div class="singup-inputs-window rtl d-flex">
+                                                    <div class="d-flex flex-column align-items-start">
+
+                                                        <div>
+                                                            <label class="select-name3">نام کاربری :</label>
+
+                                                        </div>
+                                                        <div>
+                                                            <label class="select-name3">ایمیل :</label>
+
+                                                        </div>
+                                                        <div>
+                                                            <label class="select-name3">پسوورد :</label>
+
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="d-flex flex-column align-items-center">
+
+                                                        <div>
+
+                                                            <input id="username" class="selector-input ltr" name="username" placeholder="UserName" value="" />
+                                                        </div>
+                                                        <div>
+
+                                                            <input id="email" class="selector-input ltr" name="email" placeholder="YourEmail@gmail.com" value="" />
+                                                        </div>
+                                                        <div>
+
+                                                            <input id="pwd" class="selector-input ltr" name="pwd" value="" />
+                                                        </div>
+
+                                                    </div>
+
+
+
+
 
                                                 </div>
-                                                <div>
-                                                    <label class="select-name3">ایمیل :</label>
+                                                <button class="creatacc-btn">ایجاد حساب</button>
+                                                <div class="already-login">
+                                                    <span>حساب کاربری دارید ؟</span>
+                                                    <a href="#">وارد شوید</a>
+                                                </div>
+
+                                                <div class="creat-social mt-5 ">
+                                                    <h7>ایجاد حساب کاربری از طریق :</h7>
+                                                    <div class="social-icons">
+                                                        <a href="#"><img src="/img/social singup/twitter.png" alt="Alternate Text" /></a>
+                                                        <a href="#"><img src="/img/social singup/facebook.png" alt="Alternate Text" /></a>
+                                                        <a href="#"><img src="/img/social singup/yahoo.png" alt="Alternate Text" /></a>
+                                                        <a href="#"><img src="/img/social singup/google.png" alt="Alternate Text" /></a>
+                                                    </div>
+
+
+
 
                                                 </div>
-                                                <div>
-                                                    <label class="select-name3">پسوورد :</label>
 
-                                                </div>
+
+
 
                                             </div>
-                                            <div class="d-flex flex-column align-items-center">
 
-                                                <div>
-
-                                                    <input class="selector-input ltr" name="Username" placeholder="UserName" value="" />
-                                                </div>
-                                                <div>
-
-                                                    <input class="selector-input ltr" name="Email" placeholder="YourEmail@gmail.com" value="" />
-                                                </div>
-                                                <div>
-
-                                                    <input class="selector-input ltr" name="Password" value="" />
-                                                </div>
-
-                                            </div>
-
-
-
-
-
-                                        </div>
-                                        <button class="creatacc-btn">ایجاد حساب</button>
-                                        <div class="already-login">
-                                            <span>حساب کاربری دارید ؟</span>
-                                            <a href="#">وارد شوید</a>
-                                        </div>
-
-                                        <div class="creat-social mt-5 ">
-                                            <h7>ایجاد حساب کاربری از طریق :</h7>
-                                            <div class="social-icons">
-                                                <a href="#"><img src="/img/social singup/twitter.png" alt="Alternate Text" /></a>
-                                                <a href="#"><img src="/img/social singup/facebook.png" alt="Alternate Text" /></a>
-                                                <a href="#"><img src="/img/social singup/yahoo.png" alt="Alternate Text" /></a>
-                                                <a href="#"><img src="/img/social singup/google.png" alt="Alternate Text" /></a>
-                                            </div>
-
-
-
-
-                                        </div>
-
-
-
-
+                                        </form>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    @* modal *@
+                        @* modal *@
 
-                    <span>|</span>
-                    <span><a href="#" data-toggle="modal" data-target="#exampleModalCenter2">Sign In</a></span>
-                    @* modal *@
-                    <div class="modal fade sing-up" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
+                        <span>|</span>
+                        <span><a href="#" data-toggle="modal" data-target="#exampleModalCenter2">Sign In</a></span>
+                        @* modal *@
+                        <div class="modal fade sing-up" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
 
-                                <div class="sinup-tab">
-                                    <button type="button" style="opacity:1" class="close" data-dismiss="modal" aria-label="Close">
-                                        <img aria-hidden="true" src="/img/social singup/close.png" alt="Alternate Text" />
-                                    </button>
-                                    <div class="sing-window">
+                                    <div class="sinup-tab">
+                                        <button type="button" style="opacity:1" class="close" data-dismiss="modal" aria-label="Close">
+                                            <img aria-hidden="true" src="/img/social singup/close.png" alt="Alternate Text" />
+                                        </button>
+                                        <div class="sing-window">
 
-                                        <h6>ایجاد حساب کاربری</h6>
-                                        <div class="cover-singup">
-                                            <img src="/img/social singup/1.png" alt="Alternate Text" />
-                                        </div>
-
-                                        <div class="singup-inputs-window rtl d-flex">
-                                            <div class="d-flex flex-column align-items-start">
-
-                                                <div>
-                                                    <label class="select-name3">نام کاربری/ایمیل :</label>
-
-                                                </div>
-
-                                                <div>
-                                                    <label class="select-name3">پسوورد :</label>
-
-                                                </div>
-
-                                            </div>
-                                            <div class="d-flex flex-column align-items-center">
-
-                                                <div>
-
-                                                    <input class="selector-input ltr" name="Username" placeholder="UserName/Email" value="" />
-                                                </div>
-
-                                                <div>
-
-                                                    <input class="selector-input ltr" name="Password" value="" />
-                                                </div>
-
+                                            <h6>ورود به سایت </h6>
+                                            <div class="cover-singup">
+                                                <img src="/img/social singup/1.png" alt="Alternate Text" />
                                             </div>
 
+                                            <div class="singup-inputs-window rtl d-flex">
+                                                <div class="d-flex flex-column align-items-start">
+
+                                                    <div>
+                                                        <label class="select-name3">نام کاربری/ایمیل :</label>
+
+                                                    </div>
+
+                                                    <div>
+                                                        <label class="select-name3">پسوورد :</label>
+
+                                                    </div>
+
+                                                </div>
+                                                <div class="d-flex flex-column align-items-center">
+
+                                                    <div>
+
+                                                        <input class="selector-input ltr" name="Username" placeholder="UserName/Email" value="" />
+                                                    </div>
+
+                                                    <div>
+
+                                                        <input class="selector-input ltr" name="Password" value="" />
+                                                    </div>
+
+                                                </div>
 
 
 
 
-                                        </div>
-                                        <div class="d-flex align-items-center">
-                                            <button class="login-btn">ورود</button>
-                                            <input class="mr-2" type="checkbox" name="remember-acc" value="" />
-                                            <span class="remmber-txt">مرا بخاطر بسپار</span>
-                                        </div>
-                                        
-                                        <div class="already-login">
-                                            <span class="mr-4">حساب کاربری ندارید ؟</span>
-                                            <a href="#">ثبت نام</a>
-                                        </div>
-                                        <div class="already-login">
-                                            <a class="mr-4" href="#">پسورد خود را فراموش کرده اید ؟</a>
 
-                                        </div>
-                                        
+                                            </div>
+                                            <div class="d-flex align-items-center">
+                                                <button class="login-btn">ورود</button>
+                                                <input class="mr-2" type="checkbox" name="remember-acc" value="" />
+                                                <span class="remmber-txt">مرا بخاطر بسپار</span>
+                                            </div>
 
+                                            <div class="already-login">
+                                                <span class="mr-4">حساب کاربری ندارید ؟</span>
+                                                <a href="#">ثبت نام</a>
+                                            </div>
+                                            <div class="already-login">
+                                                <a class="mr-4" href="#">پسورد خود را فراموش کرده اید ؟</a>
 
-                                        <div class="creat-social mt-5 ">
-                                            <h7>ایجاد حساب کاربری از طریق :</h7>
-                                            <div class="social-icons">
-                                                <a href="#"><img src="/img/social singup/twitter.png" alt="Alternate Text" /></a>
-                                                <a href="#"><img src="/img/social singup/facebook.png" alt="Alternate Text" /></a>
-                                                <a href="#"><img src="/img/social singup/yahoo.png" alt="Alternate Text" /></a>
-                                                <a href="#"><img src="/img/social singup/google.png" alt="Alternate Text" /></a>
                                             </div>
 
 
 
+                                            <div class="creat-social mt-5 ">
+                                                <h7>ایجاد حساب کاربری از طریق :</h7>
+                                                <div class="social-icons">
+                                                    <a href="#"><img src="/img/social singup/twitter.png" alt="Alternate Text" /></a>
+                                                    <a href="#"><img src="/img/social singup/facebook.png" alt="Alternate Text" /></a>
+                                                    <a href="#"><img src="/img/social singup/yahoo.png" alt="Alternate Text" /></a>
+                                                    <a href="#"><img src="/img/social singup/google.png" alt="Alternate Text" /></a>
+                                                </div>
+
+
+
+
+                                            </div>
+
+
+
 
                                         </div>
-
-
-
-
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    @* modal *@
+                        @* modal *@
+                    }
+
                 </div>
             </div>
             <div class="row logo-main ">
@@ -216,16 +233,18 @@
                             </a>
 
                         </div>
+
                         <div class="buton-account-vip">
-                            <a href="#">درخواست</a>
+
+                            <a asp-action="demand" asp-controller="Site">درخواست</a>
 
                         </div>
                         <div class="buton-account-vip">
-                            <a href="#">انکود اختصاصی</a>
+                            <a href="#">ریلیز اختصاصی</a>
 
                         </div>
 
-                        <div asp-action="index" asp-controler="site" class="buton-account-vip" >
+                        <div asp-action="index" asp-controler="site" class="buton-account-vip">
                             <a asp-action="index" asp-controller="Site">صفحه اصلی</a>
                         </div>
 
@@ -282,16 +301,21 @@
                         <div class="col rtl">
                             <div class="smart-search-tab">
                                 <div class="smart-search-request">
+
                                     <div class="select-up d-flex">
                                         <div class="mr-0">
                                             <div class="m-auto">
                                                 <label class="select-name">برندگان جوایز :</label>
                                                 <select class="selector-top">
                                                     <option value="value">...</option>
-                                                    <option>براساس IMDB</option>
-                                                    <option>براساس روزنامه NY TIMES</option>
-                                                    <option>براساس منتقدین</option>
-
+                                                    <option>برندگان جوایز اسکار بهترین فیلم</option>
+                                                    <option>برندگان جوایز اسکار بهترین فیلم غیر انگلیسی</option>
+                                                    <option>برندگان جشنواره فیلم ونیز--شیر طلایی</option>
+                                                    <option>برندگان جوایز فیلم رقص خورشید (SUNDANCE)</option>
+                                                    <option>برندگان جوایز گلدن گلوب</option>
+                                                    <option>برندگان جوایز فیلم سزار فرانسه</option>
+                                                    <option>برندگان جشنواره فیلم کن</option>
+                                                    <option>برندگان جشنواره بین المللی فیلم در برلین</option>
 
                                                 </select>
                                             </div>
@@ -299,9 +323,31 @@
                                                 <label class="select-name-best">برترین ها :</label>
                                                 <select class="selector-top">
                                                     <option value="value">...</option>
-                                                    <option>براساس IMDB</option>
-                                                    <option>براساس روزنامه NY TIMES</option>
-                                                    <option>براساس منتقدین</option>
+                                                    <optgroup label="___________ فیلم ها ___________">
+                                                        <option>250 فیلم برتر  (IMDb)</option>
+                                                        <option>250 فیلم برتر از نگاه کاربران (IMDb)</option>
+                                                        <option>250 فیلم برتر  (IMDb)</option>
+                                                        <option>250 فیلم برتر از نگاه انجمن (Reddj)</option>
+                                                        <option>250 فیلم برتر-- نواراصلی</option>
+                                                        <option>100 فیلم برتر از نگاه (GateMoviez)</option>
+                                                        <option>50 فیلم برتر تاریخ از نگاه --سایت اندساند</option>
+                                                        <option>50 فیلم برتر تاریخ سینما بر اساس منتقدان--متاکریتیک</option>
+                                                        <option>100 فیلم برتر قرن 21 از نگاه (BBC)</option>
+                                                        <option>برتیرن فیلم های تحسین شده قرن 21 از نگاه--کاربران</option>
+                                                        <option>منتخب فیلمهای برتر از نگاه --منتقدان سینما</option>
+                                                        <option>منتخب فیلمهای برتر کلاسیک</option>
+                                                    </optgroup>
+
+                                                    <optgroup label="__________ سریال ها __________">
+                                                        <option>250 سریال برتر (IMDb)</option>
+                                                        <option>100 سریال برتر از نگاه (GateMoviez)</option>
+                                                        <option>برترین سریال های قرن 21</option>
+                                                        <option>برترین سریال هایی که باید دید ! (IMDb)</option>
+                                                        <option>برترین سریال های کوتاه از نگاه کاربران سینما</option>
+                                                        <option>5 سریال برتر تاریخ از نگاه (IMDb)</option>
+                                                        <option>برترین سریالهای غیر انگلیسی (NETFLIX)</option>
+                                                    </optgroup>
+
 
 
                                                 </select>
@@ -390,19 +436,17 @@
 
 
                                             </select>
-                                            <label class="select-name9">شبکه پخش :</label>
-                                            <select class="selector">
-                                                <option value="value">...</option>
-                                                <option>HBO</option>
-                                                <option>NETFLIX</option>
-                                                <option>CW</option>
-                                                <option>NBC</option>
-                                                <option>CCTV</option>
-                                                <option>CANAL+</option>
-                                                <option>STARZ</option>
+
+                                            <label class="form-check-label1" for="flexCheckDefault1">
+                                                ریلیز اختصاصی :
+                                            </label>
+                                            <input class="form-check-input " type="checkbox" value="" id="flexCheckDefault1">
+                                            <label class="form-check-label" for="flexCheckDefault2">
+                                                دوبله فارسی :
+                                            </label>
+                                            <input class="form-check-input mr-1" type="checkbox" value="" id="flexCheckDefault2">
 
 
-                                            </select>
                                             @*<button class="btn-src">جستجو</button>*@
                                         </div>
                                         <div class="slt-up5">
@@ -469,6 +513,8 @@
 
 
 
+                                    @*<span class="arm-search fas fa-cogs"></span>*@
+                                    <img class="arm-search" src="~/img/smart-search3.png" alt="Alternate Text" />
 
 
                                 </div>
@@ -525,7 +571,7 @@
                     <div class="row">
                         <div class="col">
                             <div class="last-epsods-tab ">
-                                <label>: آخرین ایپزودها </label>
+                                <label>: آخرین ایپزودها  </label>
                                 <hr class="m-2" />
                                 <form class="navbar-series d-flex rtl">
                                     <input type="text" placeholder=" سریال مورد نظر .." name="search">
@@ -653,8 +699,9 @@
                     </div>
                     <div class="row">
                         <div class="col">
-                            <div class="popular-movies-tab ">
-                                <label>: محبوبترین ها </label>
+
+                            <div class="popular-movies-tab rtl">
+                                <label>محبوبترین ها :</label>
                                 <hr class="m-2" />
                                 <ul>
                                     <li class="popsleft">
@@ -816,99 +863,154 @@
 
 
                     </div>
-
-
-
-
-                </div>
-                <footer>
-                    <div class="container-fluid">
+                    <div class="row">
                         <div class="col">
-                            <div class="row">
-                                <div class="alert-primary m-3 p-3"> footer area !</div>
+                            <div class="janer-tab rtl">
+                                <label>ژانر :</label>
+                                <hr class="ml-2 mr-2 mt-1" />
+                                <ul>
+                                    <li><a href="#">جنایی</a></li>
+                                    <li><a href="#">فانتزی</a></li>
+                                    <li><a href="#">موزیکال</a></li>
+                                    <li><a href="#">راز آلود</a></li>
+                                    <li><a href="#">هیجانی</a></li>
+                                    <li><a href="#">ورزشی</a></li>
+                                    <li><a href="#">اکشن </a></li>
+                                    <li><a href="#">ماجرایی</a></li>
+                                    <li><a href="#">خانوادگی</a></li>
+                                    <li><a href="#">زندگی نامه</a></li>
+                                    <li><a href="#">تخیلی</a></li>
+                                    <li><a href="#">ترسناک</a></li>
+                                    <li><a href="#">کمدی</a></li>
+                                    <li><a href="#">وسترن</a></li>
+                                    <li><a href="#">معمایی</a></li>
+                                    <li><a href="#">موسیقی</a></li>
+                                </ul>
+
+
                             </div>
                         </div>
                     </div>
 
 
-                </footer>
-
-                <script src="~/lib/jquery/dist/jquery.min.js"></script>
-                <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-                <script src="~/js/site.js" asp-append-version="true"></script>
-                <script src="~/js/owl.carousel.min.js"></script>
-
-
-                <script>
-                    var owl = $('.movie-container.owl-carousel');
-                    owl.owlCarousel({
-                        loop: true,
-                        nav: false,
-                        margin: 5,
-                        items: 6,
-                        autoplay: true,
-                        autoplayTimeout: 3500,
-                        autoplayHoverPause: true,
-
-
-                    });
-                    var owl = $('.movie-example.owl-carousel');
-                    owl.owlCarousel({
-                        loop: true,
-                        nav: false,
-                        margin: 5,
-                        items: 5,
-                        center: true,
-                        autoplay: true,
-                        autoplayTimeout: 3500,
-                        autoplayHoverPause: true,
-
-                    });
-                    owl.on('mousewheel', '.owl-stage', function (e) {
-                        if (e.deltaY > 0) {
-                            owl.trigger('next.owl');
-                        } else {
-                            owl.trigger('prev.owl');
-                        }
-                        e.preventDefault();
-                    });
 
 
 
-                </script>
+                </div>
+            </div>
 
 
-                <script>
-                    var dropdownElementList = [].slice.call(document.querySelectorAll('.data-bs-toggle'))
-                    var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
 
-                        return new bootstrap.Dropdown(dropdownToggleEl)
-                    })
+            <div class="footer pr-1">
+                <img src="~/img/Data Movies .png" alt="Alternate Text" />
+                <div class="copyright">
+                    <b>Developer</b>
+                    <span class="ml-2">copyright</span>
+                </div>
+            </div>
 
-                </script>
-                <script>
-                    $('#myModal').modal({
-                        keyboard: false
-                    })
-                </script>
-                <script>
-                    $('#myModal').modal('toggle')
-                </script>
-                <script>
-                    $('#myModal').modal('show')
-                </script>
-                <script>
-                    $('#myModal').modal('hide')
-                </script>
-                <script>
-                    $('#myModal').modal('handleUpdate')
-                </script>
-                <script>
-                    $('#myModal').on('hidden.bs.modal', function (e) {
-                        // do something...
-                    })
-                </script>
+        </div>
 
-                @RenderSection("Scripts", required: false)
+
+
+
+
+
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/owl.carousel.min.js"></script>
+
+
+    <script>
+        var owl = $('.movie-container.owl-carousel');
+        owl.owlCarousel({
+            loop: true,
+            nav: false,
+            margin: 5,
+            items: 6,
+            autoplay: true,
+            autoplayTimeout: 3500,
+            autoplayHoverPause: true,
+
+
+        });
+        var owl = $('.movie-example.owl-carousel');
+        owl.owlCarousel({
+            loop: true,
+            nav: false,
+            margin: 5,
+            items: 5,
+            center: true,
+            autoplay: true,
+            autoplayTimeout: 3500,
+            autoplayHoverPause: true,
+
+        });
+        owl.on('mousewheel', '.owl-stage', function (e) {
+            if (e.deltaY > 0) {
+                owl.trigger('next.owl');
+            } else {
+                owl.trigger('prev.owl');
+            }
+            e.preventDefault();
+        });
+
+
+
+    </script>
+
+
+    <script>
+        var dropdownElementList = [].slice.call(document.querySelectorAll('.data-bs-toggle'))
+        var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
+
+            return new bootstrap.Dropdown(dropdownToggleEl)
+        })
+
+    </script>
+    <script>
+        $('#myModal').modal({
+            keyboard: false
+        })
+    </script>
+    <script>
+        $('#myModal').modal('toggle')
+    </script>
+    <script>
+        $('#myModal').modal('show')
+    </script>
+    <script>
+        $('#myModal').modal('hide')
+    </script>
+    <script>
+        $('#myModal').modal('handleUpdate')
+    </script>
+    <script>
+        $('#myModal').on('hidden.bs.modal', function (e) {
+            // do something...
+        })
+    </script>
+    <script>
+        $('.collapse').collapse()
+
+    </script>
+
+    @RenderSection("Scripts", required: false)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>

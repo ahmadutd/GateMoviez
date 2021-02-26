@@ -62,13 +62,14 @@ namespace DataMovies.Web
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=site}/{action=Index}/{id?}");
+                    pattern: "{controller=Account}/{action=Dashboard}/{id?}");
             });
         }
     }

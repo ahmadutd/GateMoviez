@@ -35,15 +35,23 @@
     direction:ltr !important;
     text-align:left !important
 }
+html {
+    background: #e9e1d1;
+}
+.container-fluid {
+    background:#e9e1d1 ;
+    
+}
 
-.container {
+.partation-1 {
     width: 980px;
     margin: 0 auto;
     border-left: 1px solid #DCD8CC;
     border-right: 1px solid #DCD8CC;
     padding: 0 10px 10px 10px;
     background: #FFF;
-    background-color:#fcf6e5
+    background-color: #fcf6e5;
+    position: relative !important
 }
 
 .register-tab {
@@ -476,8 +484,19 @@ form.navbar span {
 {
  margin-right:10px;
  margin-top:9px;
- font-size:small;
- color:#000000
+ font-size:13px;
+ color:#000000;
+ text-decoration:none;
+ transform:scale(1);
+ transition:all 300ms ease !important;
+}
+.next-address a:hover
+{
+    transform:scale(1.1);
+    font-weight:bold;
+    color:darkgoldenrod;
+    
+
 }
 /*End Next Address Section*/
 /* movie card section*/
@@ -518,7 +537,7 @@ form.navbar span {
     font-family:yekan;
     font-weight:bold;
     font-size:medium;
-    margin-left:160px;
+    margin-left:190px;
 }
 
 
@@ -669,7 +688,7 @@ form.navbar-series button:hover {
     font-family:yekan;
     font-weight:bold;
     font-size:medium;
-    margin-left:175px;
+    margin-right:20px;
 }
 .popular-movies-tab ul
 {
@@ -705,22 +724,95 @@ form.navbar-series button:hover {
     border: 1px solid #ff0000
 }
 /*End popular movies*/
+/*Janer tab section*/
+.janer-tab
+{
+    width:100%;
+    height:400px;
+    padding: 5px 0px;
+    margin: 5px 0px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.10);
+}
+.janer-tab ul
+{
+    list-style:none;
+    margin:0;
+    padding:0;
+    
+}
+
+.janer-tab ul li
+{
+    float: right;
+    width: 46%;
+    margin: 2px 2% 2px 0;
+    border: 1px solid rgba(0, 0, 0, 0.20);
+    background-color:#fcf4e4;
+    border-collapse: collapse;
+    border-radius:3px;
+}
+.janer-tab ul li a
+{
+    display:block;
+    padding:5px;
+    color:#333;
+    text-decoration:none;
+    font-family:yekan;
+    font-size:13px;
+    transition:all 300ms ease
+    
+}
+.janer-tab ul li a:hover
+{
+    color:#FFF;
+    background-color:goldenrod
+    
+}
+
+.janer-tab label
+{
+    margin:0px 0px;
+    font-family:yekan;
+    font-weight:bold;
+    font-size:medium;
+    margin-right:20px
+}
+
+
+
+
+
+
+
+
+/* End Janer tab section*/
 /*smart search section*/
 .smart-search-tab {
     background-color: rgba(0, 0, 0, 0.10);
     border-radius: 5px;
-    padding:10px !important
+    padding: 10px !important;
 }
+
 .smart-search-tab .smart-search-request {
-    margin:0px 0px !important;
+    margin: 0px 0px !important;
     background-color: #fae4b6;
     padding-right: 5px !important;
     padding-left: 5px !important;
-    padding-top: 10px !important;
+    padding-top: 15px !important;
     padding-bottom: 5px !important;
     border: 1px solid rgba(21, 18, 12, 0.30);
     border-radius: 5px;
-    
+    position:relative
+
+}
+.smart-search-tab .arm-search
+{
+    position:absolute;
+    top:20px;
+    left:25px;
+    color:#333;
+    width:5%
 }
 .smart-search-tab .smart-search-request .select-up
 {
@@ -735,15 +827,20 @@ form.navbar-series button:hover {
     border-radius: 3px;
     width: 186px;
     height: 18px;
-    font-family:yekan;
-    font-size: xx-small;
+    font-family:'Segoe UI';
+    font-size:10px;
+    font-weight:bold
+       
 
 }
 
 .smart-search-tab .smart-search-request .select-up .selector-top option
 {
-    font-size:x-small;
+    font-size:10px;
+    font-weight:bold;
     line-height:unset;
+    font-family:'Segoe UI';
+    padding:10px;
 
 }
 
@@ -786,19 +883,25 @@ form.navbar-series button:hover {
 .smart-search-tab .smart-search-request .select-up .btnsrc
 {
     
-    margin:10px 85px 0px 0px!important;
-    padding:1px 1px;
-    border:1px solid rgba(0, 0, 0, 0.17);
-    border-radius:4px;
-    width:70px;
+    margin:10px 60px 0px 0px!important;    
+    border-radius:3px;
+    width:80px;
     height:20px;
-    background-color:#fae4b6;
-    transition:all 400ms ease
+    color:#fff;
+    font-size:12px;
+    padding-bottom:2px;
+    font-family:yekan;
+    border:none;
+    line-height:1;
+    align-items:center;
+    transition:all 200ms ease;
+    background-color:#e19100
+
 }
 .smart-search-tab .smart-search-request .select-up .btnsrc:hover
 {
+    background-color:#facca0;
 
-    background-color:rgba(252, 170, 55, 0.51)
 
 }
 
@@ -855,14 +958,30 @@ form.navbar-series button:hover {
     color:#383838;
     margin-right:27px
 }
-.smart-search-tab .smart-search-request .select-up .select-name9
+.smart-search-tab .smart-search-request .select-up .form-check-label
 {
     font-family:yekan;
     font-size:11px;
     font-weight:bold;
     color:#383838;
-    margin-right:20px
+    margin-right:20px;
+    align-items:baseline !important
+    
+    
 }
+.smart-search-tab .smart-search-request .select-up .form-check-label1
+{
+    font-family:yekan;
+    font-size:11px;
+    font-weight:bold;
+    color:#383838;
+    margin-right:20px;
+    align-items:baseline !important
+    
+    
+}
+
+
 /*.smart-search-tab .smart-search-request .select-up .btn-src
 {
     margin-right:75px;
@@ -884,8 +1003,9 @@ form.navbar-series button:hover {
     border-radius: 3px;
     width: 90px;
     height: 18px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: xx-small;
+    font-family:'Segoe UI';
+    font-size:10px;
+    font-weight:bold
 }
 .smart-search-tab .smart-search-request .select-up .selector-input
 {
@@ -1275,3 +1395,126 @@ margin:0px 3px
 
 
 /*End Last Movie Index*/
+
+
+/*footer tab*/
+.footer {
+    margin-top: 5px;
+    width: 980px;
+    color: #666666;
+    background: #e0ded7;
+    padding: 8px 5px;
+    position: absolute !important;
+    left: -1px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    display:flex;
+    
+    font: 10px verdana,tahoma;
+}
+.footer .copyright
+{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-left:auto;
+    margin-right:10px;
+}
+.footer img
+{
+    margin-left:10px;
+    width:10%
+}
+    /*end footer tab*/
+/*Request Section*/
+.demand-tab {
+    margin-top: 3px;
+    background-color: rgba(0, 0, 0, 0.10);
+    border-radius: 5px;
+    padding-top: 10px !important;
+    padding-right: 10px !important;
+    padding-left: 10px !important;
+    padding-bottom: 30px !important;
+}
+.demand-tab .title-demand
+{
+    display:flex;
+    align-items:center;
+    
+}
+.demand-tab .title-demand h6
+{
+    font-family:yekan;
+    font-weight:bold;
+    margin-top:5px;
+    margin-right:10px
+
+}
+.demand-tab .demand-submit-list
+{
+    display:flex;
+    align-items:center;
+    margin-top:20px;
+}
+.demand-tab .demand-submit-list span
+{
+    font-size:12px;
+    font-family:yekan;
+    font-weight:bold;
+    margin-right:10px
+
+}
+.demand-tab .demand-img
+{
+    padding:10px;
+    display:flex;
+    align-items:center
+}
+
+.demand-tab .demand-img img {
+    width: 60%;
+    border: 1px solid #e99d00;
+    border-radius: 3px;
+    cursor:pointer;
+    transform:scale(1);
+    transition:transform 500ms ease !important
+}
+.demand-tab .demand-img img:hover
+{
+    transform:scale(3);
+    z-index:1999 !important;
+
+}
+.demand-tab .demand-submit-list .imdb-demand-logo {
+    font-size: 13px;
+    font-weight: bold;
+    font-family: Arial;
+    background-color: goldenrod;
+    padding: 0px 5px;
+    border-radius: 2px;
+    margin: 0px 3px;
+}
+.demand-tab .demand-submit-list .imdb-demand-cod-input
+{
+    margin-right:5px;
+    width:150px;
+    height:20px;
+    line-height:inherit
+}
+.demand-tab .demand-submit-list .deman-submit
+{
+    margin-right:10px;
+    border:none;
+    font-family:yekan;
+    font-size:11px;
+    border-radius:3px;
+    background-color:crimson;
+    color:#fff;
+    transition:all 300ms ease
+}
+.demand-tab .demand-submit-list .deman-submit:hover
+{
+    background-color:#fe7676;
+
+}
+
+/*End Request Section*/

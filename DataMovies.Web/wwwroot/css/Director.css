@@ -124,9 +124,10 @@
 .director-information .awards-info .awards-director .oscar-win-count
 {
     font-size:13px;
-    color:#333;
+        color:#8e0000;
+
     padding:0px 4px;
-    background-color:rgba(255, 255, 255, 0.25)
+    
 
 
 }
@@ -138,9 +139,10 @@
 .director-information .awards-info .awards-director .other-win-count
 {
     font-size:12px;
-    color:#333;
+        color:#8e0000;
+
     padding:0px 2px;
-    background-color:rgba(255, 255, 255, 0.25)
+    
 
 
 }

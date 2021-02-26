@@ -1,147 +1,518 @@
 ﻿@font-face {
+    font-family: 'Font Awesome 5 Free';
+    font-style: normal;
+    font-weight: 900;
+    font-display: block;
+    src: url("../../font/Fontawesome/webfonts/fa-solid-900.eot");
+    src: url("../../font/Fontawesome/webfonts/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("../../font/Fontawesome/webfonts/fa-solid-900.woff2") format("woff2"), url("../../font/Fontawesome/webfonts/fa-solid-900.woff") format("woff"), url("../../font/Fontawesome/webfonts/fa-solid-900.ttf") format("truetype"), url("../../font/Fontawesome/webfonts/fa-solid-900.svg#fontawesome") format("svg");
+}
+@font-face {
+    font-family: 'Font Awesome 5 Brands';
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url("../../font/Fontawesome/webfonts/fa-brands-400.eot");
+    src: url("../../font/Fontawesome/webfonts/fa-brands-400.eot?#iefix") format("embedded-opentype"), url("../../font/Fontawesome/webfonts/fa-brands-400.woff2") format("woff2"), url("../../font/Fontawesome/webfonts/fa-brands-400.woff") format("woff"), url("../../font/Fontawesome/webfonts/fa-brands-400.ttf") format("truetype"), url("../../font/Fontawesome/webfonts/fa-brands-400.svg#fontawesome") format("svg");
+}
+@font-face {
     font-family: "yekan";
-    src: url("../font/Yekan/Yekan.eot");
-    src: url("../font/Yekan/Yekan.eot?#iefix") format("embedded-opentype"), url("../font/Yekan/Yekan.woff") format("woff"), url("../font/Yekan/Yekan.ttf") format("truetype"), url("../font/Yekan/Yekan.svg#BYekan") format("svg");
+    src: url(../font/Yekan/Yekan.eot);
+    src: url(../font/Yekan/Yekan.eot?#iefix) format("embedded-opentype"), url(../font/Yekan/Yekan.woff) format("woff"), url(../font/Yekan/Yekan.ttf) format("truetype"), url(../font/Yekan/Yekan.svg#BYekan) format("svg");
     font-weight: normal;
     font-style: normal
 }
-
-*:focus{
+*{
     outline:none !important;
-    box-shadow:none !important;
+    box-shadow:none !important
 }
-a{
-    text-decoration: none !important;
-}
-html, body {
-    font-family:yekan!important;
-    direction: rtl !important;
-    text-align: right;
-    background-color:#f5f5f5;
-}
-/*===== ====== ====== ====== ====== ======*/
-/*custume css class defination here*/
-/*===== ====== ====== ====== ====== ======*/
-.ltr{
-    direction: ltr !important;
-    text-align:left;
-}
-rtl{
-    direction:rtl !important;
-    text-align:right;
-}
-/*===== ====== ====== ====== ====== ======*/
-.header
+.rtl
 {
-    width:100%;
-    height:3.5rem;
-    border-bottom:1px solid rgba(0,0,0,0.1);
-    display:flex;
-    align-items:center;
-    background-color:white;
-
+    direction:rtl !important;
+    text-align:right !important
 }
-.header .toggle-sidebar{
-    width:3.5rem;
-    height:100%;
+.ltr
+{
+    direction:ltr !important;
+    text-align:left !important
+}
+html {
+    background: #e9e1d1;
+}
+.container-fluid {
+    background:#e9e1d1 ;
     
 }
-.header .toggle-sidebar .toggle-sidebar-btn
-{
-    display:flex;
-    outline:none !important;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    width:100%;
-    height:100%;
-    border:none !important;
-    background: none !important;
-}
-.header .toggle-sidebar .toggle-sidebar-btn span
-{
-    display:block;
-    width:50%;
-    height:2px;
-    margin:2px 0px;
-    background:#999;
 
-}
-.header .toggle-sidebar .toggle-sidebar-btn:hover span {
-    background: #333;
+.partation-1 {
+    width: 980px;
+    margin: 0 auto;
+    border-left: 1px solid #DCD8CC;
+    border-right: 1px solid #DCD8CC;
+    padding: 0 10px 10px 10px;
+    background: #FFF;
+    background-color: #fcf6e5;
+    position: relative !important
 }
 
- 
-
-.content-wraper
+.register-tab {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    line-height: 26px;
+    background-color:#15120c;
+    color: white;
+    direction: rtl !important;
+    text-align: right !important;
+    align-items: center;
+    margin: 0 1px;
+}
+.register-tab .sinup-tab
 {
     position:relative;
-    height:calc(100vh - 3.5rem);
+    background-color:#fff;
+    width:500px;
+    height:340px;
+    padding:20px;
+    border-radius:3px
+}
+.register-tab .sinup-tab .close
+{
+    position:absolute;
+    top:-1.2rem;
+    left:-2rem;
+    
 
 }
-.content-body
+.register-tab .sinup-tab .close img
 {
-    width:100%;
-    height:calc(100vh - 3.5rem);
-    overflow-y:scroll;
+    width:45%;
 }
-.content-wraper .sidebar
+
+
+.register-tab .sinup-tab .cover-singup
 {
     position:absolute;
     top:0;
-    right:0;
-    bottom:0;
-    width:15rem;
-    margin-right:-15rem;
-    background-color:white;
-    box-shadow:-1px 0 1px 0 rgba(0,0,0,0.1);
-    z-index:1000;
-    transition: all 300ms ease;
+    left:0;
+    margin-top:25px;
+    margin-right:350px
 
 }
-.content-wraper .sidebar .sidebar-nav {
+.register-tab .sinup-tab .cover-singup img
+{
+    width:75%;
+}
 
-    width: 100%;
-    height: 100%;
-    display:flex;
-    flex-direction:column;
-    align-items:stretch;
-    justify-content:flex-start;
-    padding: 0 !important;
-    margin: 0 !important;
-    list-style:none !important;
+
+.register-tab .sinup-tab h6
+{
+    color:black;
+    font-family:yekan;
+    font-weight:bold;
+    margin-right:9px;
+    margin-bottom:20px
+    
+}
+.register-tab .sinup-tab h7
+{
+    color:#333;
+    font-family:yekan;
+    font-weight:bold;
+    margin-right:9px;
         
+}
+.register-tab .sinup-tab .creat-social
+{
+    display:flex;
+    align-items:center
+    
+}
+.register-tab .sinup-tab .creat-social .social-icons
+{
+    margin-right:auto;
+
+}
+.register-tab .sinup-tab .creat-social a
+{
+    margin-left:5px;  
+    
+}
+
+.register-tab .sinup-tab .creat-social a img
+{
+    width:48px;
+    height:48px;
+    border-radius:10px;
+    transform: scale(0.9);
+    transition:transform 300ms ease
+}
+.register-tab .sinup-tab .creat-social a img:hover
+{
+        transform: scale(1);
+        border-radius:10px;
+    box-shadow:0 10px 10px 0px rgba(0,0,0,0.5) !important;
+
+
+}
+
+.register-tab .sing-window {
+    background-color: antiquewhite;
+    height: 300px;
+    padding: 10px;
+}
+.register-tab .sing-window .creatacc-btn
+{
+    border:none;
+    padding:2px 15px;
+    border-radius:5px;
+    font-size:11px;
+    line-height:initial;
+    color:#fff;
+    background-color:#f76a00;
+    margin-right:125px;
+    margin-bottom:0px;
+    transition:all 300ms ease
+    
+    
+}
+.register-tab .sing-window .creatacc-btn:hover
+{   
+    background-color:#ffba86;       
+}
+.register-tab .sing-window .login-btn
+{
+    border:none;
+    padding:0px 15px 3px 15px;
+    border-radius:5px;
+    font-size:11px;
+    line-height:initial;
+    color:#fff;
+    background-color:#098200;
+    margin-right:130px;
+    margin-bottom:0px;
+    transition:all 300ms ease
+    
+    
+}
+.register-tab .sing-window .login-btn:hover
+{   
+    background-color:#4ab249;       
+}
+
+.register-tab .sing-window .singup-inputs-window
+{
+    padding-top:10px;   
+    line-height:1.5;   
+}
+.register-tab .sing-window .already-login
+{
+    margin-right:105px;
+    margin-top:4px;
+   
+    line-height:1
+    
+}
+
+.register-tab .sing-window .already-login span
+{
+    color:#333;
+    font-size:11px;
+    font-family:yekan;
+    
+}
+.register-tab .sing-window .already-login a
+{
+    color:#ff7500;
+    font-family:yekan;
+    text-decoration:dashed;
+    font-size:11px;
+    
+}
+.register-tab .sing-window .already-login a:hover
+{
+    color:#903900
+}
+.register-tab .sing-window .remmber-txt
+{
+    font-size:11px;
+    color:#333;
+    font-family:yekan;
+    margin-right:3px;
+}
+
+.register-tab .sing-window .singup-inputs-window .selector-input {
+    border: 1px solid rgba(0, 0, 0, 0.30);
+    background: #fcf5e7;
+    border-radius: 3px;
+    width: 150px;
+    height: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: x-small;
+    margin-top: 2px;
+    margin-bottom: 7px;
+    margin-right: 25px
+}
+.register-tab .sing-window .singup-inputs-window .select-name3 {
+    font-family: yekan;
+    font-weight: bold;
+    font-size: 13px;
+    color: #383838;
+    margin-right: 10px;    
+}
+
+
+
+.register-tab a {
+    text-decoration: none;
+    margin: 0 2px;
+    color: white
+}
+
+
+.register-tab .top {
+    margin: 1px 20px;
+    font-size: 11px;
+    color:rgba(255, 255, 255, 0.30)
+    
+}
+.logo-main img  {
+  
+    width:30%;
+    height:auto;
+     
+}
+.logo-main {
+    margin:10px 0px!important;
+}
+/*menu top bar section*/
+
+.menu-top-bar {
+    background-color: #15120c;
+    border-radius: 5px;
+    padding-bottom: 16px;
+    padding-top: 12px;
+    display: flex !important;
+    justify-content: center;
+    align-items: center !important;
+    text-align: center !important;
+}
+
+
+.buton-account-vip a {
+    margin-right: 10px !important;
+    background-color: #ef8400;
+    color:#333;
+    padding: 0px 6px !important;
+    line-height:1;
+    border-radius: 5px;
+    font-family: yekan;
+    font-weight:700;
+    transition:all 400ms ease;
+    font-size: small;
+    cursor: pointer;
+    width:100px;
+    text-decoration:none
+}
+.buton-account-vip a span
+{
+    color:#333
+}
+.buton-account-vip a:hover
+{
+    color:#d79c23
+
+}
+
+.buton-account-vip a:hover {
+    background-color: #ffff;
+    color:#383838
+}
+.dropdown .dropdown-menu a {
+    direction: rtl !important;
+    text-align: right !important;
+    font-family: yekan !important;
+    font-size:x-small !important;
+    font-weight:bold;
+    padding: 4px 15px !important
+}
+.dropdown .dropdown-menu a:hover
+{
+    background-color:rgba(215, 156, 35, 0.55) !important;
+    border-radius:5px !important
+}
+
+/*End menu top bar section*/
+/*Search Top Bar Section*/
+.search-top-bar {
+    background-color: #15120c;
+    padding: 6px 0px;
+    border-radius: 5px;
+    
+}
+
+form.navbar input[type=text] {
+    font-size: smaller !important;
+    line-height: unset !important;
+    overflow: hidden;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 85%;
+    background: #fff;
+    margin-left: 10px;
+    border-radius: 3px;
+    color: black;
+}
+
+form.navbar::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+form.navbar span {
+    margin-left: 5px;
+    color: white;
+    background-color: #15120c;
+    box-shadow: none !important;
+    display: block;
+    cursor: pointer
+}
+/*End Search Top Bar Section*/
+/*footer tab*/
+.footer {
+    margin-top:2px !important;
+    width: 980px;
+    color: #666666;
+    background: #e0ded7;
+    padding: 8px 5px;
+    position: absolute !important;
+    left: -1px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    display:flex;
+    font: 10px verdana,tahoma;
+}
+.footer .copyright
+{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-left:auto;
+    margin-right:10px;
+}
+.footer img
+{
+    margin-left:10px;
+    width:10%
+}
+    /*end footer tab*/
+    /*User-topbar section*/
+.user-topbar
+{
+    margin-top:5px;
+    background-color: rgba(247, 136, 0, 0.61);
+    padding:5px 5px;
+    border-radius: 5px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+}
+.user-topbar .user-title
+{
+    color:#333;
+    font-family:yekan;
+    font-weight:bold;
+    font-size:15px;
+    margin-left:10px;
        
 }
-.content-wraper .sidebar .sidebar-nav nav-menu-item{
+.user-optionbar
+{
+    margin-top:5px;
+    margin-bottom:40px;
+    background-color: rgba(247, 136, 0, 0.10);
+    padding:5px 5px 20px 5px;
+    height:auto;
+    border-radius: 5px;
+
+    
+}
+.user-optionbar .user-items
+{
+    display:flex;
+    align-items:center;
+    justify-content:start;
+    margin-right:15px;
+    margin-left:15px;
+    margin-top:10px;
+    cursor:pointer;
+    padding:3px 10px;
+    border-radius:5px;
+    color:#333;
+    text-decoration:none;
+    transition:all 300ms ease;
+}
+.user-optionbar .user-items span
+{
+    font-size:14px;
+}
+.user-optionbar .user-items:hover
+{
+   background-color: rgba(247, 136, 0, 0.60);
+   color:antiquewhite;
+ 
+}
+.user-optionbar .items
+{
+    font-family:yekan;
+    font-size:13px !important;
+    font-weight:500;
+}
+.user-optionbar .alert-count
+{
+    margin-right:auto;
+    margin-left:8px;
+    font-size:10px !important;
+    color:#fff;
+    background-color:red;
+    border-radius:50%;
+    padding:0px 5px;
+}
+
+.user-optionbar .user-togle-list {
+    background-color: #fff;
+    margin-right: 30px;
+    margin-left: 15px;
+    margin-top: 2px;
+    cursor: pointer;
+    padding: 3px 10px;
+    border-radius: 5px;
+    color: #333;
+    text-decoration: none
+}
+.user-optionbar .user-togle-list .alert-count
+{
+    margin-right:auto;
+    font-size:10px !important;
+    color:#fff;
+    background-color:red;
+    border-radius:50%;
+    padding:0px 5px;
+}
+.user-optionbar .user-togle-list span
+{
+    font-size:13px !important
+}
+.user-optionbar .user-togle-list:hover
+{
+   background-color: rgba(247, 136, 0, 0.60);
 
 }
-.content-wraper .sidebar .sidebar-nav .nav-menu-item .nav-item-link {
-    display: flex;
-    align-items:center;
-    padding: 10px 25px !important;
-    color:#333;
-    transition: all 100ms ease !important;
-}
-.content-wraper .sidebar .sidebar-nav .nav-menu-item .nav-item-link:hover {
-    color: #fff;
-    background-color:sandybrown
-}
-.content-wraper .sidebar.show {
-    margin-right: 0;
-}
-.content-wraper .content {
-    margin-right: 15rem;
-    transition: all 300ms ease;
-}
-.content-wraper .content.expand {
-    margin-right: 0;
-        
-}
-.admin-avatar
+.user-optionbar .user-togle-list .items
 {
-    width:32px;
-    height:32px;
-    border-radius:50%;
-    overflow:hidden;
+    font-family:yekan;
+    font-size:12px !important;
+    font-weight:600;
 }
+ /*End User-topbar section*/

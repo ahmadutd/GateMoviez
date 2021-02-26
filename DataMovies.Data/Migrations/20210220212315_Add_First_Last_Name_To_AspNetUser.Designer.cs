@@ -4,14 +4,16 @@ using GateMoviez.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GateMoviez.Data.Migrations
 {
     [DbContext(typeof(GateMoviezDbContext))]
-    partial class GateMoviezDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210220212315_Add_First_Last_Name_To_AspNetUser")]
+    partial class Add_First_Last_Name_To_AspNetUser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

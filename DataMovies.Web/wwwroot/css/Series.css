@@ -714,3 +714,172 @@ margin-right:-2px;
     font-weight:500;
     color:#b44d00
 }
+/*Start Download Section*/
+.download-tab {
+    background-color: rgba(51, 51, 51, 0.15);
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-radius: 5px;
+    margin-top: 2px;
+    height:700px;
+}
+.carousel-inner .carousel-item img {
+    width: 100%;
+    height: 350px !important;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+.title-series {
+    background-color: #111111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    margin-bottom:10px;
+}
+.title-series h3
+{
+    color:#e0ded7;
+    font-family:'League Gothic';
+    margin-top:6px;
+    line-height:1
+    
+}
+
+.download-drops
+{
+    margin-top:10px;
+   
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    
+    
+}
+.download-drops button {
+    color: #333;
+    border: none;
+    width:95%;
+    font-family: yekan;
+    line-height: 2;
+    padding:2px 5px !important;
+    background-color:#fff;
+    transition:all 300ms ease;
+   
+}
+.download-drops button:hover
+{
+    background-color:#f7e29c
+}
+.download-drops .dropdown-menu {
+    width:95%;
+    line-height:2;
+    border-radius:3px;
+
+    
+}
+
+.download-drops .dropdown-menu a
+{
+    font-family:Arial !important;
+    font-size:12px !important;
+    display:flex;  
+    color:#333;
+    font-weight:bold;
+    text-decoration:none;
+    position:relative;
+    background-color: rgba(51, 51, 51, 0.15);
+
+}
+.download-drops .dropdown-menu li a .cap-series
+{
+    position:absolute;
+    margin-right:200px
+    
+}
+.download-drops .dropdown-menu li a .cap-series span
+{
+    margin-right:30px;
+}
+.download-tab .logo-dl {
+    display: flex;
+    align-items: start;
+    justify-content: start
+}
+.download-tab .logo-dl img
+{
+    width:3%;
+    margin-left:10px
+}
+/*modal*/
+.down-modal .downlaod-links-tab {
+    background-color: #e0ded7;
+    width: 540px;
+    height: auto;
+    border-radius: 3px
+}
+.down-modal .downlaod-links-tab .title-bar-dls
+{
+    background-color:#111111;
+    height:40px;
+    border-top-left-radius:3px;
+    border-top-right-radius:3px;
+    align-items:baseline !important;
+    height:inherit;
+    padding:10px 
+}
+.down-modal .downlaod-links-tab .title-bar-dls img
+{
+    width:4%;
+    
+}
+.down-modal .downlaod-links-tab .download-links
+{
+   
+    padding:10px 10px;
+}
+.down-modal .downlaod-links-tab .download-links ul
+{
+    list-style:none;
+    padding:10px 10px;
+    margin:0;
+    text-align:center
+    
+}
+.down-modal .downlaod-links-tab .download-links li
+{
+    margin-bottom:10px;
+    margin-left:20px;
+    width:100% !important
+}
+.down-modal .downlaod-links-tab .download-links span
+{
+   
+    background-color:#fff;
+    padding:5px 10px;
+    border-radius:3px;
+    font-size:13px;
+
+}
+.down-modal .downlaod-links-tab .download-links a
+{
+    background-color:#fff;
+    padding:5px 10px;
+    border-radius:3px;
+    color:#333;
+    background-color:rgba(216, 132, 0, 0.21);
+    font-size:13px;
+    font-weight:bold;
+    margin-left:auto !important;
+}
+.down-modal .downlaod-links-tab .links-window
+{
+    height: 335px;
+    overflow: auto;
+    border: 1px solid rgba(51, 51, 51, 0.10);
+    direction:rtl !important
+}
+
+
