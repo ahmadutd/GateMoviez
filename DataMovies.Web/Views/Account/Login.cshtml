@@ -1,27 +1,40 @@
 ﻿@using Microsoft.AspNetCore.Identity;
 
-<div class="d-flex align-items-center justify-content-center h-100">
-    <div class="card">
-        <div class="card-header">Login Form</div>
-        <div class="card-body">
-            <form asp-action="PostLogin" asp-controller="Account">
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="Email1" name="email" aria-describedby="emailHelp" placeholder="Enter email">
-                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="pwdd" name="password" placeholder="Password">
-                </div>
-                <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                </div>
-                <button type="submit" class="btn btn-primary">Login</button>
-            </form>
-        </div>
-        <div class="card-footer">Footer</div>
-    </div>
-</div>
+    <div class="sing-up-tab rtl">
+        <div class="d-flex mt-2">
+            <h6>ورود به حساب</h6>
+            <span class="singup-logo fas fa-sign-in-alt"></span>
 
+        </div>
+        <hr />
+        <form asp-action="PostLogin" asp-controller="Account">
+            <div class="form-group">
+                <label class="sign-up-lbl">ایمیل :</label>
+                <input type="email" class="form-control sign-up-inpt ltr" id="Email1" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+
+            </div>
+            <div class="form-group">
+                <label class="sign-up-lbl">پسوورد :</label>
+                <input type="password" class="form-control sign-up-inpt ltr" id="pwdd" name="password" placeholder="Password">
+            </div>
+            
+                <div class="d-flex">
+                    <button type="submit" class="login-btn">ورود</button>
+                    <input class="input-login-chkbx" type="checkbox" name="remember-acc" />
+                    <span class="remmber-txt">مرا بخاطر بسپار</span>
+                </div>
+
+
+            
+
+            <div class="already-login mt-3">
+                <span class="mr-2">حساب کاربری ندارید ؟</span>
+                <a asp-action="Register" asp-controller="Account">ثبت نام</a>
+            </div>
+            <div class="already-login">
+                <a class="mr-2" href="#">پسورد خود را فراموش کرده اید ؟</a>
+
+            </div>
+        </form>
+
+    </div>

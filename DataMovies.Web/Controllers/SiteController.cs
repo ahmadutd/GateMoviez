@@ -17,10 +17,11 @@ namespace DataMovies.Web.Controllers
             return View();
         }
         [AllowAnonymous]
-
-        public IActionResult demand()
+        public IActionResult ContactUs()
         {
             return View();
         }
+
+
     }
 }

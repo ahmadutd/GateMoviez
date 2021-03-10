@@ -1,0 +1,24 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@{
+    Layout = "_AdminLayout";
+}
+<head>
+    <link rel="stylesheet" href="~/css/Admin-site.css" />
+
+</head>
+
+<div class="Ticket-User-tab">
+    <div class="Ticket-User-tab-title rtl">
+        <span class="fas fa-envelope-open-text"></span>
+        <h6>مدیریت و ارسال تیکت</h6>
+    </div>
+    
+    <div class="Ticket-mngr rtl">
+        <a asp-action="TicketSend" asp-controller="UserManagerAccount">ارسال تیکت جدید</a>
+        <a asp-action="TicketSendsHistory" asp-controller="UserManagerAccount">تاریخچه تیکت ها</a>
+
+    </div>
+
+
+    
+</div>

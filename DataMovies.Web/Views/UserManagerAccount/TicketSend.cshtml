@@ -1,0 +1,34 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@{
+    Layout = "_AdminLayout";
+}
+<head>
+    <link rel="stylesheet" href="~/css/Admin-site.css" />
+
+</head>
+
+<div class="Ticket-User-tab">
+    <div class="Ticket-User-tab-title rtl">
+        <span class="fas fa-envelope"></span>
+        <h6>ارسال تیکت</h6>
+    </div>
+
+    <div class="Ticket-Send rtl">
+        <div class="d-flex flex-column">
+            <label>عنوان :</label>
+            <input type="text" name="name" value="" />
+        </div>
+        <div class="d-flex flex-column mt-3">
+            <label>توضیح :</label>
+            <textarea class="ticket-desc" ></textarea>
+        </div>
+        <div class="snd-tkt-btn mt-3 mr-1">
+            <a href="#">ارسال تیکت</a>
+        </div>
+
+
+    </div>
+
+
+
+</div>

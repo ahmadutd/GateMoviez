@@ -2,14 +2,11 @@
     <link rel="stylesheet" href="~/css/Series.css" />
 
 </head>
+
 <div class="film-tab">
     <div class="blog-title-bar">
         <span class="title-movie" href="#">Vikings (2012)</span>
         <hr class="mb-2 mt-1 ml-4 mr-4" />
-        @*<div class="size-lbl">
-                <span>Size :</span>
-                <b class="size-ticket">1033 MB</b>
-            </div>*@
 
 
         <div class="img-film-post">
@@ -81,22 +78,6 @@
                 <i>|</i>
                 <a href="#">روسی</a>
             </li>
-            <li class="mt-2 mb-3">
-
-
-                <b class="rating-imdb rtl">
-                    7.3
-                    <span class="often">/10</span>
-
-                </b>
-                <a class="imdb-logo" href="#">IMDB</a>
-
-                <i class="vots-txt">تعداد رای دهندگان :</i>
-                <a class="vots-imdb text-secondary" style="text-decoration:none" href="#">134,566</a>
-
-
-
-            </li>
             <li>
                 آپدیت :
                 <label class="last-ep-update">
@@ -104,6 +85,23 @@
                     <span>قسمت 04</span>
                     اضافه شد
                 </label>
+            </li>
+
+            <li class="mt-1 mb-1 d-flex align-items-baseline ">
+
+                <a class="imdb-logo" href="#">IMDB</a>
+
+                <b class="rating-imdb rtl">
+                    7.3
+                    <span class="often">/10</span>
+
+                </b>
+
+                <i class="vots-txt">تعداد رای دهندگان :</i>
+                <a class="vots-imdb text-secondary" style="text-decoration:none" href="#">134,566</a>
+
+
+
             </li>
         </ul>
     </div>
@@ -139,24 +137,369 @@
     </div>
     <div class="film-download-title-tab d-flex align-items-center justify-content-end  ml-4 mr-4">
         <span class="dl-font fas fa-download"></span>
-        <span class="dl-txt">لینک دانلود</span>
+        <span class="dl-txt">دانلود</span>
     </div>
+
+
+
+
+
+    @* start download section---------------------------------------------------------------------------------------------------- *@
     <div class="film-download-tab ml-4 mr-4 rtl">
-        <ul>
-            <li class="even">
-                
-                    <b class="series-download">ورود به صفحه دانلود</b>
-                    
-                              
 
-                
-                <a asp-action="Download" asp-controller="Series">DOWNLOAD</a>
 
-            </li>
-            
 
-        </ul>
+        <div class="series-dl-list">
+            <button data-toggle="collapse" data-target="#demo">
+                <span>فصل اول</span>
+                <span class="cir-plus fas fa-plus-circle"></span>
+            </button>
+
+
+            <div id="demo" class="collapse show clp">
+                <div>
+                    <a asp-action="DownloadLinks" asp-controller="series" class="items-qlty-even d-flex rtl">
+                        <span class="qly-name-series">کیفیت :</span>
+                        <span class="qly-link-series">480p x264</span>
+                        <span class="dl-link-series">دانلود</span>
+                    </a>
+
+                </div>
+                <div>
+                    <a class="items-qlty-even d-flex rtl" href="#">
+                        <span class="qly-name-series">کیفیت :</span>
+                        <span class="qly-link-series">720p x264</span>
+                        <span class="dl-link-series">دانلود</span>
+                    </a>
+
+                </div>
+                <div>
+                    <a class="items-qlty-even d-flex rtl" href="#">
+                        <span class="qly-name-series">کیفیت :</span>
+                        <span class="qly-link-series">1080p x264</span>
+                        <span class="dl-link-series">دانلود</span>
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="series-dl-list">
+            <button data-toggle="collapse" data-target="#demo1">
+                <span>فصل دوم</span>
+                <span class="cir-plus fas fa-plus-circle"></span>
+            </button>
+
+
+            <div id="demo1" class="collapse show clp">
+                <div>
+                    <a class="items-qlty-even d-flex rtl" href="#">
+                        <span class="qly-name-series">کیفیت :</span>
+                        <span class="qly-link-series">480p x264</span>
+                        <span class="dl-link-series">دانلود</span>
+                    </a>
+
+                </div>
+                <div>
+                    <a class="items-qlty-even d-flex rtl" href="#">
+                        <span class="qly-name-series">کیفیت :</span>
+                        <span class="qly-link-series">720p x264</span>
+                        <span class="dl-link-series">دانلود</span>
+                    </a>
+
+                </div>
+                <div>
+                    <a class="items-qlty-even d-flex rtl" href="#">
+                        <span class="qly-name-series">کیفیت :</span>
+                        <span class="qly-link-series">1080p x264</span>
+                        <span class="dl-link-series">دانلود</span>
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="series-dl-list">
+            <button data-toggle="collapse" data-target="#demo2">
+                <span>فصل سوم</span>
+                <span class="cir-plus fas fa-plus-circle"></span>
+            </button>
+
+
+            <div id="demo2" class="collapse show clp">
+                <div>
+                    <a class="items-qlty-even d-flex rtl" href="#">
+                        <span class="qly-name-series">کیفیت :</span>
+                        <span class="qly-link-series">480p x264</span>
+                        <span class="dl-link-series">دانلود</span>
+                    </a>
+
+                </div>
+                <div>
+                    <a class="items-qlty-even d-flex rtl" href="#">
+                        <span class="qly-name-series">کیفیت :</span>
+                        <span class="qly-link-series">720p x264</span>
+                        <span class="dl-link-series">دانلود</span>
+                    </a>
+
+                </div>
+                <div>
+                    <a class="items-qlty-even d-flex rtl" href="#">
+                        <span class="qly-name-series">کیفیت :</span>
+                        <span class="qly-link-series">1080p x264</span>
+                        <span class="dl-link-series">دانلود</span>
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+
+
+        @* start dobleh partion ----------------------------------------------------------------------------------------------------- *@
+        <div class="series-dl-list">
+            <button class="btn-series-dubleh" data-toggle="collapse" data-target="#demo6">
+                <span>فصل اول</span>
+                <span class="fas fa-microphone mr-auto ml-4 text-dark" title="دوبله فارسی"></span>
+
+                <span class=" fas fa-plus-circle"></span>
+            </button>
+
+
+            <div id="demo6" class="collapse show clp">
+
+                <div>
+                    <a class="items-qlty-odd d-flex rtl" href="#">
+                        <span class="qly-name-series">کیفیت :</span>
+                        <span class="qly-link-series">480p x265</span>
+                        <span class="dl-link-series">دانلود</span>
+                    </a>
+
+                </div>
+                <div>
+                    <a class="items-qlty-odd d-flex rtl" href="#">
+                        <span class="qly-name-series">کیفیت :</span>
+                        <span class="qly-link-series">720p x265</span>
+                        <span class="dl-link-series">دانلود</span>
+                    </a>
+
+                </div>
+                <div>
+                    <a class="items-qlty-odd d-flex rtl" href="#">
+                        <span class="qly-name-series">کیفیت :</span>
+                        <span class="qly-link-series">1080p x265</span>
+                        <span class="dl-link-series">دانلود</span>
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="series-dl-list">
+            <button class="btn-series-dubleh" data-toggle="collapse" data-target="#demo7">
+                <span>فصل دوم</span>
+                <span class="fas fa-microphone mr-auto ml-4 text-dark" title="دوبله فارسی"></span>
+
+                <span class=" fas fa-plus-circle"></span>
+            </button>
+
+
+            <div id="demo7" class="collapse show clp">
+
+                <div>
+                    <a class="items-qlty-odd d-flex rtl" href="#">
+                        <span class="qly-name-series">کیفیت :</span>
+                        <span class="qly-link-series">480p x265</span>
+                        <span class="dl-link-series">دانلود</span>
+                    </a>
+
+                </div>
+                <div>
+                    <a class="items-qlty-odd d-flex rtl" href="#">
+                        <span class="qly-name-series">کیفیت :</span>
+                        <span class="qly-link-series">720p x265</span>
+                        <span class="dl-link-series">دانلود</span>
+                    </a>
+
+                </div>
+                <div>
+                    <a class="items-qlty-odd d-flex rtl" href="#">
+                        <span class="qly-name-series">کیفیت :</span>
+                        <span class="qly-link-series">1080p x265</span>
+                        <span class="dl-link-series">دانلود</span>
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="series-dl-list">
+            <button class="btn-series-dubleh" data-toggle="collapse" data-target="#demo8">
+                <span>فصل سوم</span>
+                <span class="fas fa-microphone mr-auto ml-4 text-dark" title="دوبله فارسی"></span>
+                <span class=" fas fa-plus-circle"></span>
+            </button>
+
+
+            <div id="demo8" class="collapse show clp">
+
+                <div>
+                    <a class="items-qlty-odd d-flex rtl" href="#">
+                        <span class="qly-name-series">کیفیت :</span>
+                        <span class="qly-link-series">480p x265</span>
+                        <span class="dl-link-series">دانلود</span>
+                    </a>
+
+                </div>
+                <div>
+                    <a class="items-qlty-odd d-flex rtl" href="#">
+                        <span class="qly-name-series">کیفیت :</span>
+                        <span class="qly-link-series">720p x265</span>
+                        <span class="dl-link-series">دانلود</span>
+                    </a>
+
+                </div>
+                <div>
+                    <a class="items-qlty-odd d-flex rtl" href="#">
+                        <span class="qly-name-series">کیفیت :</span>
+                        <span class="qly-link-series">1080p x265</span>
+                        <span class="dl-link-series">دانلود</span>
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+        @* End dobleh partion ----------------------------------------------------------------------------------------------------- *@
+
+        @* start Zirnevis partion ----------------------------------------------------------------------------------------------------- *@
+        <div class="series-dl-list">
+            <button class="btn-series-zirnevis" data-toggle="collapse" data-target="#demo9">
+                <span>فصل اول</span>
+                <span class="fas fa-closed-captioning mr-auto ml-4 text-dark" title="زیرنویس فارسی"></span>
+
+                <span class=" fas fa-plus-circle"></span>
+            </button>
+
+
+            <div id="demo9" class="collapse show clp">
+
+                <div>
+                    <a class="items-qlty-off d-flex rtl" href="#">
+                        <span class="qly-name-series">کیفیت :</span>
+                        <span class="qly-link-series">480p x265</span>
+                        <span class="dl-link-series">دانلود</span>
+                    </a>
+
+                </div>
+                <div>
+                    <a class="items-qlty-off d-flex rtl" href="#">
+                        <span class="qly-name-series">کیفیت :</span>
+                        <span class="qly-link-series">720p x265</span>
+                        <span class="dl-link-series">دانلود</span>
+                    </a>
+
+                </div>
+                <div>
+                    <a class="items-qlty-off d-flex rtl" href="#">
+                        <span class="qly-name-series">کیفیت :</span>
+                        <span class="qly-link-series">1080p x265</span>
+                        <span class="dl-link-series">دانلود</span>
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="series-dl-list">
+            <button class="btn-series-zirnevis" data-toggle="collapse" data-target="#demo10">
+                <span>فصل دوم</span>
+                <span class="fas fa-closed-captioning mr-auto ml-4 text-dark" title="زیرنویس فارسی "></span>
+
+                <span class=" fas fa-plus-circle"></span>
+            </button>
+
+
+            <div id="demo10" class="collapse show clp">
+
+                <div>
+                    <a class="items-qlty-off d-flex rtl" href="#">
+                        <span class="qly-name-series">کیفیت :</span>
+                        <span class="qly-link-series">480p x265</span>
+                        <span class="dl-link-series">دانلود</span>
+                    </a>
+
+                </div>
+                <div>
+                    <a class="items-qlty-off d-flex rtl" href="#">
+                        <span class="qly-name-series">کیفیت :</span>
+                        <span class="qly-link-series">720p x265</span>
+                        <span class="dl-link-series">دانلود</span>
+                    </a>
+
+                </div>
+                <div>
+                    <a class="items-qlty-off d-flex rtl" href="#">
+                        <span class="qly-name-series">کیفیت :</span>
+                        <span class="qly-link-series">1080p x265</span>
+                        <span class="dl-link-series">دانلود</span>
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="series-dl-list">
+            <button class="btn-series-zirnevis" data-toggle="collapse" data-target="#demo11">
+                <span>فصل سوم</span>
+                <span class="fas fa-closed-captioning mr-auto ml-4 text-dark" title="زیرنویس فارسی"></span>
+                <span class=" fas fa-plus-circle"></span>
+            </button>
+
+
+            <div id="demo11" class="collapse show clp">
+
+                <div>
+                    <a class="items-qlty-off d-flex rtl" href="#">
+                        <span class="qly-name-series">کیفیت :</span>
+                        <span class="qly-link-series">480p x265</span>
+                        <span class="dl-link-series">دانلود</span>
+                    </a>
+
+                </div>
+                <div>
+                    <a class="items-qlty-off d-flex rtl" href="#">
+                        <span class="qly-name-series">کیفیت :</span>
+                        <span class="qly-link-series">720p x265</span>
+                        <span class="dl-link-series">دانلود</span>
+                    </a>
+
+                </div>
+                <div>
+                    <a class="items-qlty-off d-flex rtl" href="#">
+                        <span class="qly-name-series">کیفیت :</span>
+                        <span class="qly-link-series">1080p x265</span>
+                        <span class="dl-link-series">دانلود</span>
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+        @* End Zirnevis partion ----------------------------------------------------------------------------------------------------- *@
+
+
+
+
+
+
+
+
+
     </div>
+    @* End download section---------------------------------------------------------------------------------------------------- *@
+
+
     <hr class="m-4" />
     <div class="film-download-title-tab d-flex align-items-center justify-content-end  ml-4 mr-4">
         <span class="pplr-font fas fa-fire-alt"></span>
@@ -228,7 +571,7 @@
     </div>
     <div class="comment-list rtl ml-4 mr-4">
         <div class="user-comnt-title d-flex flex-column">
-            <img src="./img/iconfinder_user_account_profile_5402435 (2).png" alt="Alternate Text" />
+            <img src="~/img/iconfinder_user_account_profile_5402435 (2).png" alt="Alternate Text" />
             <b>arash_sd1910</b>
         </div>
         <div class="user-comnt"><div class="comnt-window"><span> به نظرم فیلم خیلی خوبیه . خوشم اومد ممنونم</span></div></div>
@@ -240,7 +583,7 @@
     </div>
     <div class="comment-list rtl ml-4 mr-4">
         <div class="user-comnt-title d-flex flex-column">
-            <img src="./img/iconfinder_user_account_profile_5402435 (2).png" alt="Alternate Text" />
+            <img src="~/img/iconfinder_user_account_profile_5402435 (2).png" alt="Alternate Text" />
             <b>ahmad_utd4540</b>
 
         </div>
@@ -253,7 +596,7 @@
     </div>
     <div class="comment-list rtl ml-4 mr-4">
         <div class="user-comnt-title d-flex flex-column">
-            <img src="./img/iconfinder_user_account_profile_5402435 (2).png" alt="Alternate Text" />
+            <img src="~/img/iconfinder_user_account_profile_5402435 (2).png" alt="Alternate Text" />
             <b>ahmad_utd4540</b>
 
         </div>

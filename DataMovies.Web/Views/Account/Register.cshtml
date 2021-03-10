@@ -1,46 +1,85 @@
-﻿
-@ViewBag.Message
+﻿@using Microsoft.AspNetCore.Identity;
 
-<div class="d-flex align-items-center justify-content-center h-100">
-    <div class="card">
-        <div class="card-header">Register Form</div>
-        <div class="card-body">
-            <form asp-action="PostRegister" asp-controller="Account">
-                <div class="form-group">
-                    <label for="exampleInputEmail1">User Name</label>
-                    <input type="text" class="form-control" id="UserName" name="UserName" placeholder="UserName"
-                           data-val="true" data-val-required="وارد کردن این فیلد الزامی میباشد">
-                    <span class="text-danger field-validation-valid" data-valmsg-for="UserName" data-valmsg-replace="true"></span>
+<div class="sing-up-tab rtl">
+    <div class="d-flex mt-2">
+        <h6>ورود به حساب</h6>
+        <span class="singup-logo fas fa-user-plus"></span>
 
-                </div>
-                
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Email</label>
-                    <input type="email" class="form-control" id="Email" name="Email" aria-describedby="emailHelp" placeholder="Enter Email Address"
-                           data-val="true" data-val-required="واردن کردن ایمیل الزامی میباشد" data-val-email="ایمیل وارد شده اشتباه است">
-                    <span class="text-danger field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span>
-
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="Password" name="Password" placeholder="Password"
-                           data-val="true" data-val-required="واردن کردن پسوورد الزامی میباشد" data-val-maxlenght="4 کاراکتر" data-val-maxlenght-max="4">
-                    <span class="text-danger" data-valmsg-for="Password" data-valmsg-replace="true"></span>
-                </div>
-                @*<div class="form-group">
-                    <label for="exampleInputPassword1">Confirm_Password</label>
-                    <input type="password" class="form-control" id="ConfirmPassword" name="ConfirmPassword" placeholder="ConfirmPassword"
-                           data-val="true" data-val-equalto="فیلد پسوورد با فیلد تایید پسوورد یکسان نمیباشد" data-val-equalto-other="password">
-                    <span class="text-danger" data-valmsg-for="ConfirmPassword" data-valmsg-replace="true"></span>
-
-                </div>*@
-
-                <button type="submit" class="btn btn-primary">Register</button>
-            </form>
-        </div>
-        <div class="card-footer">Footer</div>
     </div>
+    <hr />
+    <form asp-action="PostLogin" asp-controller="Account">
+        <div class="form-group">
+            <label class="sign-up-lbl">نام کاربری :</label>
+            <input type="text" class="form-control sign-up-inpt ltr" id="UserName" name="UserName" aria-describedby="emailHelp" placeholder="Enter UserName">
+
+        </div>
+        <div class="form-group">
+            <label class="sign-up-lbl">ایمیل :</label>
+            <input type="email" class="form-control sign-up-inpt ltr" id="Email1" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+
+        </div>
+        <div class="form-group">
+            <label class="sign-up-lbl">پسوورد :</label>
+            <input type="password" class="form-control sign-up-inpt ltr" id="pwdd" name="password" placeholder="Password">
+        </div>
+
+        <div class="d-flex align-items-baseline justify-content-start ">
+            <button type="submit" class="creatacc-btn">ایجاد حساب</button>
+            <div class="already-login-up">
+                <span>حساب کاربری دارید ؟</span>
+                <a asp-action="Login" asp-controller="Account">وارد شوید</a>
+            </div>
+        </div>
+        
+
+
+
+
+
+    </form>
+
 </div>
-@section Scripts {
-    <partial name="_ValidationScriptsPartial" />
-}
+
+
+@*<div class="d-flex align-items-center justify-content-center h-100">
+        <div class="card">
+            <div class="card-header">Register Form</div>
+            <div class="card-body">
+                <form asp-action="PostRegister" asp-controller="Account">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">User Name</label>
+                        <input type="text" class="form-control" id="UserName" name="UserName" placeholder="UserName"
+                               data-val="true" data-val-required="وارد کردن این فیلد الزامی میباشد">
+                        <span class="text-danger field-validation-valid" data-valmsg-for="UserName" data-valmsg-replace="true"></span>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email</label>
+                        <input type="email" class="form-control" id="Email" name="Email" aria-describedby="emailHelp" placeholder="Enter Email Address"
+                               data-val="true" data-val-required="واردن کردن ایمیل الزامی میباشد" data-val-email="ایمیل وارد شده اشتباه است">
+                        <span class="text-danger field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="Password" name="Password" placeholder="Password"
+                               data-val="true" data-val-required="واردن کردن پسوورد الزامی میباشد" data-val-maxlenght="4 کاراکتر" data-val-maxlenght-max="4">
+                        <span class="text-danger" data-valmsg-for="Password" data-valmsg-replace="true"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Confirm_Password</label>
+                        <input type="password" class="form-control" id="ConfirmPassword" name="ConfirmPassword" placeholder="ConfirmPassword"
+                               data-val="true" data-val-equalto="فیلد پسوورد با فیلد تایید پسوورد یکسان نمیباشد" data-val-equalto-other="password">
+                        <span class="text-danger" data-valmsg-for="ConfirmPassword" data-valmsg-replace="true"></span>
+
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Register</button>
+                </form>
+            </div>
+            <div class="card-footer">Footer</div>
+        </div>
+    </div>
+    @section Scripts {
+        <partial name="_ValidationScriptsPartial" />*@

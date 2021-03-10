@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - GateMoviez/Downloads</title>
+    <link rel="stylesheet" href="~/css/fontawesome/all.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+
+    <link rel="stylesheet" href="~/css/series.css" />
+</head>
+<body>
+    
+    <div class="Logo-directlinks-tab">
+        <img src="/img/Data Movies .png" alt="Alternate Text" />
+
+        <a class="ml-auto mr-2" asp-action="index" asp-controller="site" >صفحه اصلی</a>
+        <a class="mr-4" asp-action="Dashboard" asp-controller="UserManagerAccount">پنل کاربری</a>
+
+
+
+    </div>
+    
+    @RenderBody()
+</body>
+</html>

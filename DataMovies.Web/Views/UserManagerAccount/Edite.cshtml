@@ -1,0 +1,47 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@{
+    Layout = "_AdminLayout";
+}
+<head>
+    <link rel="stylesheet" href="~/css/Admin-site.css" />
+
+</head>
+
+<div class="Edite-User-tab position-relative">
+    <div class="Edite-User-tab-title rtl">
+        <span class="fas fa-user-edit"></span>
+        <h6>ویرایش حساب </h6>
+    </div>
+    <div class="d-flex rtl">
+        <div class="user-edite-names d-flex flex-column">
+            <label>نام کاربری/ایمیل</label>
+            <label>نام </label>
+            <label>نام خانوادگی</label>
+            <label>رمز جدید</label>
+            <label>تکرار رمز جدید</label>
+
+
+
+
+        </div>
+        <div class="user-edite-inputs d-flex flex-column align-items-center mr-5 ltr">
+            <span>
+                <b>@User.Identity.Name</b>
+
+                <span class="fas fa-check-circle text-success"></span>
+            </span>
+            <input type="text" name="name" value="" />
+            <input type="text" name="name" value="" />
+            <input type="text" name="name" value="" />
+            <input type="text" name="name" value="" />
+
+
+        </div>
+
+
+
+    </div>
+    <div class="d-flex position-absolute">
+        <button>ذخیره</button>
+    </div>
+</div>

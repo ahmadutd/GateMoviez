@@ -15,9 +15,9 @@ namespace GateMoviez.Web.Controllers
         {
             return View();
         }
-        [AllowAnonymous]
 
-        public IActionResult Download()
+        [AllowAnonymous]
+        public IActionResult DownloadLinks()
         {
             return View();
         }

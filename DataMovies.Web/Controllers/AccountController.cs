@@ -26,7 +26,7 @@ namespace GateMoviez.Web.Controllers
         {
             if (User.Identity.IsAuthenticated)
             {
-                return RedirectToAction("Dashboard", "Account");
+                return RedirectToAction("Dashboard", "UserManagerAccount");
 
 
             }
@@ -56,7 +56,7 @@ namespace GateMoviez.Web.Controllers
                 if (result.Succeeded)
                 {
                     
-                    return RedirectToAction("Dashboard", "Account");
+                    return RedirectToAction("Dashboard", "UserManagerAccount");
 
 
                 }
@@ -87,7 +87,7 @@ namespace GateMoviez.Web.Controllers
             }
             else
             {
-                return RedirectToAction("Account", "Dashboard");
+                return RedirectToAction("UserManagerAccount", "Dashboard");
             }
 
 
@@ -122,7 +122,7 @@ namespace GateMoviez.Web.Controllers
                 if (result.Succeeded)
                 {
                     ViewBag.Message = "user creat";
-                    return RedirectToAction("Dashboard", "Account");
+                    return RedirectToAction("Dashboard", "UserManagerAccount");
 
 
                 }
@@ -142,10 +142,6 @@ namespace GateMoviez.Web.Controllers
             return View();
 
         }
-        [AllowAnonymous]
-        public IActionResult Dashboard()
-        {
-            return View();
-        }
+        
     }
 }

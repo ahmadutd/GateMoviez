@@ -69,7 +69,7 @@ namespace DataMovies.Web
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Account}/{action=Dashboard}/{id?}");
+                    pattern: "{controller=films}/{action=index}/{id?}");
             });
         }
     }
