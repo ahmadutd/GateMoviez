@@ -4,4 +4,9 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DataMovies.Data\GateMoviez.Data.csproj" />
+    <ProjectReference Include="..\DataMovies.Domain\GateMoviez.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

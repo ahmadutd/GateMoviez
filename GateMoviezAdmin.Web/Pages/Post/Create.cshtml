@@ -1,0 +1,88 @@
+﻿@page
+@model GateMoviezAdmin.Web.Pages.Post.CreateModel
+@{
+}
+<h3 class="alert alert-success">Create Post</h3>
+<hr />
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <form method="post">
+                <input type="hidden" asp-for="video.UserId" value="" />
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label asp-for="video.Title"></label>
+                        <input class="form-control" type="text" asp-for="video.Title" value="" />
+                        <span class="text-danger" asp-validation-for="video.Title"></span>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="video.Director"></label>
+                        <input class="form-control" type="text" asp-for="video.Director" value="" />
+                        <span class="text-danger" asp-validation-for="video.Director"></span>
+
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="video.Actor"></label>
+                        <input class="form-control" type="text" asp-for="video.Actor" value="" />
+                        <span class="text-danger" asp-validation-for="video.Actor"></span>
+
+                    </div>
+                    
+                    <div class="form-group col-md-2">
+                        <label asp-for="video.VideoJaners"></label>
+
+                        <select class="js-Janer-Select2 form-control" asp-for="video.Janers" asp-items="@Model.JanerSelectitems" multiple="multiple"></select>
+                    </div>
+                    
+
+                    <div class="form-group col-md-2">
+                        <label asp-for="video.MadeIn"></label>
+                        <input class="form-control" type="text" asp-for="video.MadeIn" value="" />
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="video.Language"></label>
+                        <input class="form-control" type="text" asp-for="video.Language" value="" />
+                    </div>
+                    <div class="form-group col-md-1">
+                        <label asp-for="video.ImdbRank"></label>
+                        <input class="form-control" type="text" asp-for="video.ImdbRank" value="" />
+                    </div>
+                    <div class="form-group col-md-1">
+                        <label asp-for="video.ImdbLike"></label>
+                        <input class="form-control" type="text" asp-for="video.ImdbLike" value="" />
+                    </div>
+                    <div class="form-group col-md-1">
+                        <label asp-for="video.Size"></label>
+                        <input class="form-control" type="text" asp-for="video.Size" value="" />
+                    </div>
+                    <div class="form-group col-md-7 ">
+                        <label asp-for="video.Image">Image</label>
+                        <div class="custom-file">
+                            <label class="custom-file-label" for="customFile">Select Image</label>
+                            <input asp-for="video.Image" type="file" class="custom-file-input" id="customFile">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label asp-for="video.ShortStory"></label>
+                        <textarea class="form-control" asp-for="video.ShortStory"> </textarea>
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+                    <input class="btn btn-info" type="submit" value="Create" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+<script>
+    $(document).ready(function () {
+        $('.js-Janer-Select2').select2();
+    });
+</script>
+}

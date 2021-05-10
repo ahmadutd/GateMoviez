@@ -834,6 +834,12 @@
     display: flex;
     align-items: baseline
 }
+.Logo-directlinks-tab h6
+{
+    font-family:yekan;
+    font-weight:bold;
+    color:#333;
+}
 .Logo-directlinks-tab a
 {
     font-size:13px;

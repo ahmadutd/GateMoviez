@@ -7,5 +7,6 @@ namespace GateMoviez.Domain
 {
     public class AppRole:IdentityRole<int>
     {
+
     }
 }

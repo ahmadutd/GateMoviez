@@ -1,0 +1,64 @@
+﻿@page
+@using GateMoviez.Domain
+@model GateMoviezAdmin.Web.Pages.Post.IndexModel
+@{
+    ViewData["Title"] = "Post Managment";
+}
+
+    <div class="container-fluid">
+        <div class="row mb-3 mt-3">
+            <div class="col">
+                <a asp-page="create" class="btn btn-success">Create Post</a>
+                <a href="#" class="btn btn-info">Edite Post</a>
+                <a href="#" class="btn btn-danger">Delete Post</a>
+            </div>
+        </div>
+        
+        <div class="row">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">VideoId</th>
+                        <th scope="col">UserId</th>
+                        <th scope="col">CreateDate</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Janer</th>
+                        <th scope="col">Director</th>
+                        <th scope="col">Actor</th>
+                        <th scope="col">MadeIn</th>
+                        <th scope="col">Language</th>
+                        <th scope="col">ImdbRank</th>
+                        <th scope="col">ImdbLike</th>
+                        <th scope="col">ShortStory</th>
+                        <th scope="col">Size</th>
+                        <th scope="col">CreateBy</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (Video video in @Model.videos)
+                    {
+                        <tr>
+                            <td scope="col">#</td>
+                            <td scope="col">@video.VideoId</td>
+                            <td scope="col">@video.UserId</td>
+                            <td scope="col">@video.CreatDate</td>
+                            <td scope="col">@video.Image</td>
+                            
+                            <td scope="col">@video.Director</td>
+                            <td scope="col">@video.Actor</td>
+                            <td scope="col">@video.MadeIn</td>
+                            <td scope="col">@video.Language</td>
+                            <td scope="col">@video.ImdbRank</td>
+                            <td scope="col">@video.ImdbLike</td>
+                            <td scope="col">@video.ShortStory</td>
+                            <td scope="col">@video.Size</td>
+                            <td scope="col">@video.User?.FirstName</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+

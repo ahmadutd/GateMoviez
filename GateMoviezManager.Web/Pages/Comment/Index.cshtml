@@ -1,0 +1,71 @@
+﻿@page
+@model GateMoviezManager.Web.Pages.Comment.IndexModel
+@{
+}
+
+<div class="row rtl mt-4 mb-2">
+    <div class="col-12 col-md-3">
+        <div class="d-flex align-items-center justify-content-between">
+            <h4 class="m-0 ml-3">مدیریت نظرات</h4>
+            <a asp-area="" asp-page="./Create" class="btn btn-primary mr-auto d-md-none">ارسال فیلم جدید</a>
+        </div>
+        <hr class="d-md-none" />
+    </div>
+    <div class="col-12 col-md-6">
+        <form method="post" class="form-row">
+            <div class="col-10 col-lg-8">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="SearchText" placeholder="متن خود را برای جستجو وارد کنید" />
+                </div>
+            </div>
+            <div class="col-2 col-lg-2"><button type="submit" class="btn btn-light btn-block"><i class="fas fa-search"></i></button></div>
+        </form>
+    </div>
+    
+</div>
+<div class="row rtl">
+    <div class="col">
+        <table class="table table-sm table-bordered table-hover">
+            <thead>
+                <tr class="">
+                    <th scope="col">#</th>
+                    <th scope="col">@Html.DisplayNameFor(m => m.ListComments[0].CommnetText)</th>
+                    <th scope="col" class=" d-none d-md-table-cell">@Html.DisplayNameFor(m => m.ListComments[0].CreatedDate)</th>
+                    <th scope="col" class=" d-none d-lg-table-cell">@Html.DisplayNameFor(m => m.ListComments[0].CreatedBy)</th>
+                    <th scope="col" class="d-none d-md-table-cell">@Html.DisplayNameFor(m => m.ListComments[0].UpdatedDate)</th>
+                    <th scope="col" class="column-action">عملیات</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.ListComments != null)
+                {
+                    var i = 0;
+                    @foreach (var comment in Model.ListComments)
+                    {
+                        ++i;
+
+                        <tr>
+                            <th scope="row">@i</th>
+                            <td>@comment.CommnetText</td>
+                            <td class=" d-none d-md-table-cell">@comment.CreatedDate</td>
+                            <td class=" d-none d-lg-table-cell">@comment.CreatedBy</td>
+                            <td class="d-none d-md-table-cell">@comment.UpdatedDate.ToShortDateString()</td>
+                            <td class="column-action">
+                                <a asp-area="" asp-page="./Create" class="btn btn-sm btn-light"><i class="fas fa-pen"></i></a>
+                                <a asp-area="" asp-page="./Create" class="btn btn-sm btn-light"><i class="fas fa-trash-alt"></i></a>
+                                <a role="button" href="#" data-toggle="modal" data-target="#exampleModalCenter_@i" class="btn btn-sm btn-light">بیشتر</a>
+                                <!-- Modal More Data -->
+                                
+                            </td>
+                        </tr>
+                    };
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts {
+
+}
+

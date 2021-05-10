@@ -36,7 +36,7 @@
 {
     margin-left:15px;
     position:absolute;
-    width:6%
+    width:5%
 
 }
 .direct-tab .direct-item-card img {
@@ -76,27 +76,30 @@
     margin-bottom: 5px;
    
 }
-.director-information span
-{
-    font-family:yekan;
-    font-size:11px;
+.director-information .information-tab .in-respon-story {
+    font-family: yekan;
+    font-size: 11px;
+    line-height: 1;
 }
+
 .director-information .information-tab {
-    background-color: rgba(255, 255, 255, 0.30);
+    background-color: rgba(255, 255, 255, 0.84);
     border-radius: 2px;
     border: 1px solid rgba(0, 0, 0, 0.15);
     padding: 10px;
     margin-right: 5px;
     box-shadow: 0 5px 10px 0 rgba(0,0,0,0.5) !important;
-    height:220px;
-    width:380px
+    height: 220px;
+    width: 380px;
+    overflow: auto !important;
 }
 .director-information .awards-info {
     background-color: rgba(255, 255, 255, 0.30);
     border-radius: 2px;
     border: 1px solid rgba(0, 0, 0, 0.15);
-    padding: 10px;
+    padding: 8px;
     margin-right: 5px;
+    margin-top:2px;
     box-shadow: 0 5px 10px 0 rgba(0,0,0,0.5) !important;
     height: 89px;
     width: 380px
@@ -115,36 +118,19 @@
     padding:5px 5px;
     
 }
-.director-information .awards-info .awards-director .oscar-win-txt
-{
-    font-family:yekan;
-    font-size:13px;
-    color:#333
-}
-.director-information .awards-info .awards-director .oscar-win-count
-{
-    font-size:13px;
-        color:#8e0000;
-
-    padding:0px 4px;
-    
-
-
-}
 .director-information .awards-info .awards-director .other-win-txt {
-    font-family: yekan;
+    font-family:yekan;
     font-size: 11px;
+    font-weight:600;
     color: #333
 }
-.director-information .awards-info .awards-director .other-win-count
+.director-information .awards-info .awards-director .other-win-txt b
 {
-    font-size:12px;
-        color:#8e0000;
-
-    padding:0px 2px;
-    
-
-
+    font-family:'Segoe UI';
+    font-size: 12px;
+    font-weight:700;
+    color:#333;
+    margin:0 3px;
 }
 .Last-Movie-Tab {
     background-color: rgba(0, 0, 0, 0.10);

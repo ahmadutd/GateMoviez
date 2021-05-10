@@ -1,0 +1,180 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+@font-face {
+    font-family: "yekan";
+    src: url(../font/Yekan/Yekan.eot);
+    src: url(../font/Yekan/Yekan.eot?#iefix) format("embedded-opentype"), url(../font/Yekan/Yekan.woff) format("woff"), url(../font/Yekan/Yekan.ttf) format("truetype"), url(../font/Yekan/Yekan.svg#BYekan) format("svg");
+    font-weight: normal;
+    font-style: normal
+}
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+.navbar-brand img
+{
+    width:65%;
+}
+/* Provide sufficient contrast against white background */
+a {
+    color: #333;
+    text-decoration: none !important;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+}
+
+
+/*MySite Admin CSS Styles*/
+.far {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-left: 5px;
+}
+
+.media img {
+    width: 48px;
+    height: 48px;
+}
+
+.pointer {
+    cursor: pointer !important;
+}
+
+.rtl {
+    direction: rtl !important;
+    text-align: right;
+}
+
+.column-action {
+    width: 120px;
+    text-align: center;
+}
+
+td.column-action {
+    text-align: center !important;
+}
+
+td .btn-light:hover {
+    background-color: dodgerblue !important;
+    border-color: dodgerblue !important;
+    color: white !important;
+}
+.form-group label
+{
+   font-family:yekan;
+   font-weight:500;
+  
+
+}
+.list-group-item h6
+{
+    font-family:yekan
+}
+.list-group-item .manager-name {
+    font-family: yekan
+}
+.list-group-item:hover {
+    background: rgba(255, 180, 0, 0.25);
+}
+.card-header {
+    background: rgba(255, 180, 0, 0.25);
+    font-family:yekan;
+}
+
+.nav-item a
+{
+    font-family:yekan;
+    border-bottom:1px solid #333;
+    text-align:right;
+}
+.card .card-alert span
+{
+    font-family:yekan;
+}
+.card .card-alert:hover {
+    background: #b07e16
+}
+.card .card-body .media:hover {
+    background: rgba(255, 180, 0, 0.25);
+    cursor:default
+
+}
+.badge
+{
+    background:#bf0000 !important;
+}
+
+
+/* valisdation error css classes */
+.input-validation-error{
+    border:1px solid red !important;
+}

@@ -1,0 +1,50 @@
+﻿@using Microsoft.AspNetCore.Identity;
+
+@{
+    Layout = "_AdminLayout";
+}
+    <head>
+        <link rel="stylesheet" href="~/css/site.css" />
+    </head>
+
+    <div class="col d-flex align-items-center justify-content-center mt-4">
+        <div class="sing-up-tab rtl">
+            <div class="d-flex mt-2">
+                <h6>ورود به حساب</h6>
+                <span class="singup-logo fas fa-sign-in-alt"></span>
+
+            </div>
+            <hr />
+            <form asp-action="PostLogin" asp-controller="Account">
+                <div class="form-group">
+                    <label class="sign-up-lbl">ایمیل :</label>
+                    <input type="email" class="form-control sign-up-inpt ltr" id="Email1" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+
+                </div>
+                <div class="form-group">
+                    <label class="sign-up-lbl">پسوورد :</label>
+                    <input type="password" class="form-control sign-up-inpt ltr" id="pwdd" name="password" placeholder="Password">
+                </div>
+
+                <div class="d-flex">
+                    <button type="submit" class="login-btn">ورود</button>
+                    <input class="input-login-chkbx" type="checkbox" name="remember-acc" />
+                    <span class="remmber-txt">مرا بخاطر بسپار</span>
+                </div>
+
+
+
+
+                <div class="already-login mt-3">
+                    <span class="mr-2">حساب کاربری ندارید ؟</span>
+                    <a asp-action="Register" asp-controller="Account">ثبت نام</a>
+                </div>
+                <div class="already-login">
+                    <a class="mr-2" href="#">پسورد خود را فراموش کرده اید ؟</a>
+
+                </div>
+            </form>
+
+        </div>
+    </div>
+

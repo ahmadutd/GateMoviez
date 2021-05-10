@@ -1,0 +1,91 @@
+﻿@page
+@model GateMoviezAdmin.Web.Pages.Post.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Video</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Video.VideoId" />
+            <div class="form-group">
+                <label asp-for="Video.UserId" class="control-label"></label>
+                <select asp-for="Video.UserId" class="form-control" asp-items="ViewBag.UserId"></select>
+                <span asp-validation-for="Video.UserId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Video.Title" class="control-label"></label>
+                <input asp-for="Video.Title" class="form-control" />
+                <span asp-validation-for="Video.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Video.CreatDate" class="control-label"></label>
+                <input asp-for="Video.CreatDate" class="form-control" />
+                <span asp-validation-for="Video.CreatDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Video.Image" class="control-label"></label>
+                <input asp-for="Video.Image" class="form-control" />
+                <span asp-validation-for="Video.Image" class="text-danger"></span>
+            </div>            
+            <div class="form-group">
+                <label asp-for="Video.Director" class="control-label"></label>
+                <input asp-for="Video.Director" class="form-control" />
+                <span asp-validation-for="Video.Director" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Video.Actor" class="control-label"></label>
+                <input asp-for="Video.Actor" class="form-control" />
+                <span asp-validation-for="Video.Actor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Video.MadeIn" class="control-label"></label>
+                <input asp-for="Video.MadeIn" class="form-control" />
+                <span asp-validation-for="Video.MadeIn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Video.Language" class="control-label"></label>
+                <input asp-for="Video.Language" class="form-control" />
+                <span asp-validation-for="Video.Language" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Video.ImdbRank" class="control-label"></label>
+                <input asp-for="Video.ImdbRank" class="form-control" />
+                <span asp-validation-for="Video.ImdbRank" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Video.ImdbLike" class="control-label"></label>
+                <input asp-for="Video.ImdbLike" class="form-control" />
+                <span asp-validation-for="Video.ImdbLike" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Video.ShortStory" class="control-label"></label>
+                <input asp-for="Video.ShortStory" class="form-control" />
+                <span asp-validation-for="Video.ShortStory" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Video.Size" class="control-label"></label>
+                <input asp-for="Video.Size" class="form-control" />
+                <span asp-validation-for="Video.Size" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

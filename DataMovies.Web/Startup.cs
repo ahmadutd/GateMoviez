@@ -2,8 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+//using GateMoviez.Application;
+//using GateMoviez.Application.Interfaces;
 using GateMoviez.Data;
 using GateMoviez.Domain;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -29,19 +32,29 @@ namespace DataMovies.Web
             services.AddControllersWithViews();
 
 
-            services.AddIdentity<AppUser, AppRole>(Options =>
+            services.AddIdentity<AppUser, AppRole>(options =>
             {
-                Options.User.RequireUniqueEmail = true;
-                Options.Password.RequireNonAlphanumeric = false;
-                Options.Password.RequiredLength = 4;
-                Options.Password.RequiredUniqueChars = 0;
-                Options.Password.RequireUppercase = false;
+                options.User.RequireUniqueEmail = true;
+                options.Password.RequireNonAlphanumeric = false;                
 
             }
             ).AddEntityFrameworkStores<GateMoviezDbContext>();
+
+
+            services.AddAuthentication(
+                CookieAuthenticationDefaults.AuthenticationScheme
+                ).AddCookie(option => 
+                option.LoginPath = "/Account/Login"
+                );
+
+
             services.AddDbContext<GateMoviezDbContext>(
                 options => options.UseSqlServer(this.Configuration.GetConnectionString("DefaultConnection"))
             );
+
+
+            //services.AddScoped<VideoService>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -69,7 +82,7 @@ namespace DataMovies.Web
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=films}/{action=index}/{id?}");
+                    pattern: "{controller=actor}/{action=index}/{id?}");
             });
         }
     }

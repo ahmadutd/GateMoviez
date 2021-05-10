@@ -1,0 +1,92 @@
+﻿@page
+@model GateMoviezManager.Web.Pages.Artist.IndexModel
+@{
+    
+}
+<div class="d-flex align-items-center rtl">
+    <h4>فرم تنظیم هنرمند </h4>
+    <a asp-area="" asp-page="./Index" class="btn btn-info mr-auto">مشاهده لیست</a>
+</div>
+<hr />
+
+
+
+<div class="rtl text-right">
+    <form method="post">
+        <div class="form-row mb-3 align-items-center">
+            <div class="form-group col-12 col-md-3 col-lg-2">
+                <label asp-for="Artist.FirstName"></label>
+                <input class="form-control form-control-sm" type="text" asp-for="Artist.FirstName" />
+            </div>
+            <div class="form-group col-12 col-md-3 col-lg-2">
+                <label asp-for="Artist.Abaut"></label>
+                <input class="form-control form-control-sm" type="text" asp-for="Artist.Abaut" />
+            </div>
+            @*<div class="form-group col-12 col-md-3 col-lg-2">
+                <label asp-for="@Model.ArtistTypeIds"></label>
+                <select asp-items="Model.ArtisttypeSelectList" class="form-control form-control-sm" type="text" asp-for="@Model.ArtistTypeIds">
+                    @foreach (var item in Model.ArtistTypeList)
+                    {
+                        <option value="@item.Id">@item.ArtistTypeName</option>
+
+                    }
+
+                </select>
+            </div>*@
+            <button type="submit" class="btn btn-success ">ذخیره</button>
+
+
+        </div>
+    </form>
+</div>
+
+<div class="row rtl">
+    <div class="col">
+        <table class="table table-sm table-bordered table-hover">
+            <thead>
+                <tr class="">
+                    <th scope="col">#</th>
+                    <th scope="col">@Html.DisplayNameFor(m => m.ArtistList.First().FirstName)</th>
+                    <th scope="col">@Html.DisplayNameFor(m => m.ArtistList.First().Abaut)</th>
+                    <th scope="col">@Html.DisplayNameFor(m => m.Artist.Artist_ArtistTypes.First().ArtistType.ArtistTypeName)</th>
+                    <th scope="col" class="column-action">عملیات</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.ArtistList != null)
+                 {
+                    var i = 0;
+                    @foreach (var art in Model.ArtistList)
+                    {
+                        ++i;
+
+                        <tr>
+                            <th scope="row">@i</th>
+                            <td>@art.FirstName</td>
+                            <td>@art.Abaut</td>
+                            <td>
+                                @if (@art.Artist_ArtistTypes != null)
+                                {
+                                    @foreach (var item in art.Artist_ArtistTypes)
+                                    {
+
+                                        <span class="badge badge-primary p-2 ml-2"> @item.ArtistType.ArtistTypeName</span>
+
+
+
+                                    }
+                                }
+                            </td>
+                            <td class="column-action">
+                                <a asp-area="" asp-page="./Create" class="btn btn-sm btn-light"><i class="fas fa-pen"></i></a>
+                                <a asp-area="" asp-page="./Create" class="btn btn-sm btn-light"><i class="fas fa-trash-alt"></i></a>
+
+
+                            </td>
+                        </tr>
+                     };
+                 }
+            </tbody>
+        </table>
+    </div>
+</div>

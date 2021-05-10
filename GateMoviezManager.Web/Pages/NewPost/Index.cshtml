@@ -1,0 +1,129 @@
+﻿@page
+@model GateMoviezManager.Web.Pages.NewPost.IndexModel
+
+@{
+}
+<div class="row rtl mt-4 mb-2">
+    <div class="col-12 col-md-3">
+        <div class="d-flex align-items-center justify-content-between">
+            <h4 class="m-0 ml-3">مدیریت فیلم ها</h4>
+            <a asp-area="" asp-page="./Create" class="btn btn-primary mr-auto d-md-none">ارسال فیلم جدید</a>
+        </div>
+        <hr class="d-md-none" />
+    </div>
+    <div class="col-12 col-md-6">
+        <form method="post" class="form-row">
+            <div class="col-10 col-lg-8">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="SearchText" placeholder="متن خود را برای جستجو وارد کنید" />
+                </div>
+            </div>
+            <div class="col-2 col-lg-2"><button type="submit" class="btn btn-light btn-block"><i class="fas fa-search"></i></button></div>
+        </form>
+    </div>
+    <div class="col-4 col-md-3 col-lg-2 mr-auto">
+        <a asp-area="" asp-page="./Create" class="btn btn-primary btn-block d-none d-md-block">ارسال فیلم جدید</a>
+    </div>
+</div>
+<div class="row rtl">
+    <div class="col">
+        <table class="table table-sm table-bordered table-hover">
+            <thead>
+                <tr class="">
+                    <th scope="col">#</th>
+                    <th scope="col">@Html.DisplayNameFor(m => m.Videos[0].Title)</th>
+                    <th scope="col" class=" d-none d-md-table-cell">@Html.DisplayNameFor(m => m.Videos[0].Director)</th>
+                    <th scope="col" class=" d-none d-lg-table-cell">@Html.DisplayNameFor(m => m.Videos[0].MadeIn)</th>
+                    <th scope="col" class="d-none d-md-table-cell">@Html.DisplayNameFor(m => m.Videos[0].UpdatedDate)</th>
+                    <th scope="col" class="column-action">عملیات</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.Videos != null)
+                {
+                    var i = 0;
+                    @foreach (var video in Model.Videos)
+                    {
+                        ++i;
+
+                        <tr>
+                            <th scope="row">@i</th>
+                            <td>@video.Title</td>
+                            <td class=" d-none d-md-table-cell">@video.Director</td>
+                            <td class=" d-none d-lg-table-cell">@video.MadeIn</td>
+                            <td class="d-none d-md-table-cell">@video.UpdatedDate.ToShortDateString()</td>
+                            <td class="column-action">
+                                <a asp-area="" asp-page="./Create" class="btn btn-sm btn-light"><i class="fas fa-pen"></i></a>
+                                <a asp-area="" asp-page="./Create" class="btn btn-sm btn-light"><i class="fas fa-trash-alt"></i></a>
+                                <a role="button" href="#" data-toggle="modal" data-target="#exampleModalCenter_@i" class="btn btn-sm btn-light">بیشتر</a>
+                                <!-- Modal More Data -->
+                                <div class="modal fade text-right" id="exampleModalCenter_@i" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                <h5>اطلاعات بیشتر</h5>
+                                                <hr />
+                                                <div class="row">
+                                                    <div class="col-4">
+                                                        <img class="img-fluid" src="@video.Image" alt="Alternate Text" />
+                                                    </div>
+                                                    <div class="col-8">
+                                                        <h6>
+                                                            <span class="ml-2 text-secondary">@Html.DisplayNameFor(m => m.Videos[0].Title):</span>
+                                                            <span class="">@video.Title</span>
+                                                        </h6>
+                                                        <h6>
+                                                            <span class="ml-2 text-secondary">@Html.DisplayNameFor(m => m.Videos[0].Director):</span>
+                                                            <span class="">@video.Director</span>
+                                                        </h6>
+                                                        <h6>
+                                                            <span class="ml-2 text-secondary">@Html.DisplayNameFor(m => m.Videos[0].Actor):</span>
+                                                            <span class="">@video.Actor</span>
+                                                        </h6>
+                                                        <h6>
+                                                            <span class="ml-2 text-secondary">@Html.DisplayNameFor(m => m.Videos[0].Language):</span>
+                                                            <span class="">@video.Language</span>
+                                                        </h6>
+                                                        <h6>
+                                                            <span class="ml-2 text-secondary">@Html.DisplayNameFor(m => m.Videos[0].MadeIn):</span>
+                                                            <span class="">@video.MadeIn</span>
+                                                        </h6>
+                                                        <h6>
+                                                            <span class="ml-2 text-secondary">@Html.DisplayNameFor(m => m.Videos[0].Size):</span>
+                                                            <span class="">@video.Size</span>
+                                                        </h6>
+                                                        <h6>
+                                                            <span class="ml-2 text-secondary">@Html.DisplayNameFor(m => m.Videos[0].CreatedDate):</span>
+                                                            <span class="">@video.CreatedDate</span>
+                                                        </h6>
+                                                        <h6>
+                                                            <span class="ml-2 text-secondary">@Html.DisplayNameFor(m => m.Videos[0].CreatedUser):</span>
+                                                            <span class="">@video.CreatedUser?.LastName</span>
+                                                        </h6>
+                                                        <h6>
+                                                            <span class="ml-2 text-secondary">@Html.DisplayNameFor(m => m.Videos[0].UpdatedDate):</span>
+                                                            <span class="">@video.UpdatedDate</span>
+                                                        </h6>
+                                                        <h6>
+                                                            <span class="ml-2 text-secondary">@Html.DisplayNameFor(m => m.Videos[0].UpdatedUser):</span>
+                                                            <span class="">@video.UpdatedUser?.LastName</span>
+                                                        </h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    };
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts {
+ 
+}
+
