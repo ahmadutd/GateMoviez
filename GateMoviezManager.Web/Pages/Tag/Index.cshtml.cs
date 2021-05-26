@@ -18,15 +18,29 @@ namespace GateMoviezManager.Web.Pages.Tag
         }
         [BindProperty]
         public domain.Tag Tag { get; set; }
+        public List<domain.Tag> Data { get; set; }
         public void OnGet()
         {
+            try
+            {
+                Data = _unitOfWork.TagRepo.GetAll().ToList();
+            }
+            catch (Exception)
+            {
 
+                throw;
+            }
         }
         public IActionResult OnPost()
         {
             try
             {
-               
+                if(!ModelState.IsValid)
+                    return RedirectToPage("Index");
+
+                _unitOfWork.TagRepo.Add(Tag);
+                _unitOfWork.Commit();
+                _unitOfWork.Dispose();
 
             }
             catch (Exception)
@@ -35,7 +49,10 @@ namespace GateMoviezManager.Web.Pages.Tag
                 throw;
             }
 
-
+            finally
+            {
+                _unitOfWork?.Dispose();
+            }
 
 
 

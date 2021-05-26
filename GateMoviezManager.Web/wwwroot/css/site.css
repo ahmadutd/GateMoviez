@@ -1,5 +1,12 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
+
+
+
+
+
+
+
 @font-face {
     font-family: "yekan";
     src: url(../font/Yekan/Yekan.eot);
@@ -177,4 +184,38 @@ td .btn-light:hover {
 /* valisdation error css classes */
 .input-validation-error{
     border:1px solid red !important;
+}
+.tag-container {
+    border-radius: 4px;
+    padding: 0px;
+    margin: 5px;
+    background-color:dodgerblue;
+    color: white;
+    display: flex;
+    align-items: stretch;
+    overflow: hidden;
+}
+.tag-container .tag-text
+{
+    padding:10px;
+    font-size:11px;
+    font-family:yekan;
+    border:none;
+
+
+}
+.tag-container form .tag-btn {
+    padding: 10px;
+    background: none;
+    font-size:11px;
+    color: white !important;
+    border: none;
+    border-right: 1px solid #fff;
+    outline: none !important;
+}
+.tag-container .tag-btn:hover
+{
+    cursor:pointer;
+    background-color:#1861ac;
+    
 }

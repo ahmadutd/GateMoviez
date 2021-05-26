@@ -68,26 +68,29 @@ namespace GateMoviez.Data
                 return MyArtistArtistTypeRepo;
             }
         }
-        private ITagRepository MyTagRepository;
-        public ITagRepository TagRepository
+        private ITagRepository _TagRepo;
+        public ITagRepository TagRepo
         {
             get
             {
-                if (MyTagRepository == null)
+                if (_TagRepo == null)
                     return new TagRepository(_context);
-                return MyTagRepository;
+                return _TagRepo;
             }
         }
-        private IVideoTagsRepository MyVideoTagsRepository;
-        public IVideoTagsRepository VideoTagsRepository
+        private IVideoTagsRepository _VideoTagsRepo;
+        public IVideoTagsRepository VideoTagsRepo
         {
             get
             {
-                if (MyVideoTagsRepository == null)
+                if (_VideoTagsRepo == null)
                     return new VideoTagsRepository(_context);
-                return MyVideoTagsRepository;
+                return _VideoTagsRepo;
             }
         }
+
+       
+
         public void Dispose()
         {
             if (_context != null)

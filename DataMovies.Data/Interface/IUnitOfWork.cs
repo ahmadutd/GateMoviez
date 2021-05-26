@@ -9,10 +9,12 @@ namespace GateMoviez.Data.Interface
          IArtistRepository ArtistRepo { get; }
          IArtistTypeRepository ArtistTypeRepo { get; }
          IArtistArtistTypesRepository ArtistArtistTypeRepo { get; }
-
         ICommentRepository CommentRepo { get; }
          IVideoRepository VideoRepo { get; }
+        ITagRepository TagRepo { get; }
+        IVideoTagsRepository VideoTagsRepo { get; }
+
          int Commit();
-        void RollBack();
+         void RollBack();
     }
 }

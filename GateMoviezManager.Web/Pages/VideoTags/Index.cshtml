@@ -4,5 +4,239 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<div class="d-flex align-items-center rtl">
+    <h4>فرم انتصاب برچسب </h4>
+    <a asp-area="" asp-page="./Index" class="btn btn-info mr-auto">مشاهده لیست</a>
+</div>
+<hr />
 
+
+
+<div class="row rtl">
+    <div class="col">
+        <table class="table table-sm table-bordered table-hover">
+            <thead>
+                <tr class="">
+                    <th scope="col">#</th>
+                    <th scope="col">@Html.DisplayNameFor(m => m.Data[0].Title)</th>
+
+                    <th scope="col" class="column-action">عملیات</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.Data != null)
+                {
+                    var i = 0;
+                    @foreach (var item in Model.Data)
+                    {
+                        ++i;
+
+                        <tr>
+                            <th scope="row">@i</th>
+                            <td>@item.Title</td>
+
+                            <td class="column-action">
+
+                                <button class="btn btn-light btn-sm collapse_action" type="button" data-toggle="collapse" data-target="#collapseExample_@item.Id" aria-expanded="false" aria-controls="collapseExample">
+                                    <span class="fas fa-tags"></span>
+                                </button>
+                                <a asp-area="" asp-page="./Create" class="btn btn-sm btn-light"><i class="fas fa-pen"></i></a>
+                                
+                            </td>
+                        </tr>
+                        <tr class="container_collapse d-none">
+                            <td colspan="3">
+                                <div class="collapse" id="collapseExample_@item.Id">
+                                    <div class="p-3">
+                                        
+                                        <form method="post">
+                                            <div class="form-row mb-3 align-items-center">
+                                                <div class="col-12">
+                                                    <select asp-items="@Model.TagSelectList" asp-for="@Model.TagIds" class="w-100" id="choices-multiple-remove-button" placeholder="انتخاب برچسب" multiple></select>
+                                                                                                            
+                                                </div>
+                                                <div class="col-12 mt-3">
+                                                    <input type="hidden" asp-for="@Model.VideoId" value="@item.Id" />
+                                                    <button type="submit" class="btn btn-success">ذخیره</button>
+                                                    <button type="button" class="btn btn-danger" onclick="sendTagIdsForm('#tagIdsForm_',@item.Id)">حذف</button>
+                                                </div>
+                                                    
+                                            </div>
+                                        </form>
+                                        <form id="tagIdsForm_@item.Id" method="post" asp-page="Index" asp-page-handler="Delete">
+                                            <input type="hidden" asp-for="@Model.VideoId" />
+                                            <input type="hidden" name="TagIds[]" asp-for="@Model.TagIds" />
+                                        </form>
+                                        
+                                    </div>
+                                    <div class="p-3">
+                                        <button onclick="selectAllChekBox('#TagContainer_@item.Id')">SelectAllTag</button>
+                                        <div id="TagContainer_@item.Id" class="d-flex flex-row">                
+                                            @foreach (var videotag in item.VideoTags)
+                                            {
+                                                @*<div class="tag-container">
+                                                            <div class="tag-text">@videotag.Tag.Name</div>
+                                                            <form asp-page="Index" asp-page-handler="Delete" method="post">
+                                                                <input type="hidden" asp-for="@Model.TagSelectedForDeleteId" value="@videotag.Tag.Id"/>
+                                                                <button type="submit" class="tag-btn btn btn-primary btn-block"><i class="fas fa-trash-alt"></i></button>
+                                                            </form>
+                                                        </div>*@
+
+                                                <div class="btn-group ltr" role="group" aria-label="Basic example">
+                                                    <button type="button" class="btn btn-secondary" onclick="deleteVideoTag('#deleteVideoTagForm_@videotag.VideoId@videotag.TagId')"><i class="fas fa-trash-alt"></i></button>
+                                                    <button type="button" class="btn btn-secondary d-flex align-items-center ml-2">
+                                                        @videotag.Tag.Name
+                                                        <div class="mycheck">
+                                                            <input id="@videotag.VideoId.@videotag.TagId" type="checkbox" />
+                                                        </div>
+
+
+                                                    </button>
+
+                                                </div>
+                                                <form id="deleteVideoTagForm_@videotag.VideoId@videotag.TagId" asp-page="Index" asp-page-handler="Delete" method="post">
+                                                    <input type="hidden" asp-for="@Model.TagSelectedForDeleteId" value="@videotag.TagId" />
+
+                                                </form>
+
+
+
+
+                                            }
+
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    };
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+@section Scripts{
+   
+    <script>
+
+        let targetEl = null;
+        $('.collapse_action').click((e, o) => {
+            if (e.target.classList.contains('collapse_action')) {
+                targetEl = e.target.parentElement.parentElement.nextElementSibling;
+            } else {
+                targetEl = e.target.parentElement.parentElement.parentElement.nextElementSibling;
+            }
+
+        });
+
+        $('.collapse').on('show.bs.collapse', function () {
+            $(targetEl).removeClass('d-none');
+        })
+        $('.collapse').on('hidden.bs.collapse', function () {
+
+            $(targetEl).addClass('d-none');
+
+        })
+
+
+        var tagIds = [];
+
+        $(document).ready(function () {
+
+            var multipleCancelButton = new Choices('#choices-multiple-remove-button', {
+                removeItemButton: true,
+
+            });
+
+
+        });
+
+        function deleteVideoTag(formName) {
+            $(formName).submit();
+        }
+
+        let isTrueflag = false;
+        function selectAllChekBox(param) {
+
+            //$(param + ' input:checkbox').each((i, o) => {
+
+            //    if ($(o)[0].checked)
+            //    {
+            //        isTrueflag = true;
+            //    }
+
+            //})
+
+            //$(param + ' input:checkbox').each((i, o) => {
+            //    if ($(o)[0].checked) {
+            //        isTrueflag = true;
+            //    }
+
+            //})
+
+
+          
+            console.log(tagIds)
+            //if (isTrueflag) {
+            //    $(param + ' input:checkbox').each((i, o) => {
+            //        $(o)[0].checked = false;
+            //    })
+            //    isTrueflag = false;
+            //} else {
+            //    $(param + ' input:checkbox').each((i, o) => {
+            //        $(o)[0].checked = true;
+            //    })
+            //    isTrueflag = true;
+
+
+            //}
+        }
+
+
+        function sendTagIdsForm(formName, tagId) {
+
+            var formName = formName + tagId;
+
+            tagIds = [];
+            $('#TagContainer_' + tagId + ' .mycheck input:checkbox:checked').each((i, o) => {
+                tagIds.push($(o)[0].id)
+            })
+
+            console.log(tagIds)
+
+
+            var Ids = [];
+            var videoId;
+            tagIds.forEach((item) => {
+                videoId = parseInt(item.split('.')[0])
+                var id = parseInt(item.split('.')[1])
+                Ids.push(id);
+
+            })
+
+            $(formName + ' #VideoId').val(videoId);
+            
+            $(formName + ' [name="TagIds[]"]').val(Ids);          
+            $(formName).submit();
+        }
+
+
+
+
+
+
+
+
+    </script>
+}

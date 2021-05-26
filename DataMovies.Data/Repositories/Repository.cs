@@ -56,6 +56,9 @@ namespace GateMoviez.Data.Repositories
             
         }
 
-        
+        public void DeleteRange(List<TEntity> entities)
+        {
+            _entity.RemoveRange(entities);
+        }
     }
 }

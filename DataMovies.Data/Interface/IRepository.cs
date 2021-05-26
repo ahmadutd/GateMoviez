@@ -18,7 +18,8 @@ namespace GateMoviez.Data.Interface
         void AddRange(List<TEntity> entities);
         void Update(TEntity entity);
         void Delete(TEntity entity);
-       
+        void DeleteRange(List<TEntity> entities);
+
     }
     
 }
